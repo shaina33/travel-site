@@ -1,0 +1,9 @@
+.navbar-nav {
+    width: 90%;
+}
+
+.nav li {
+    width: 25%;
+    border-left: 1px solid gray;
+    text-align: center;
+}

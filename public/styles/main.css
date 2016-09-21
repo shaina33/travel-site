@@ -1,9 +1,59 @@
+/* Navigation Bar */
 .navbar-nav {
     width: 90%;
 }
-
 .nav li {
     width: 25%;
     border-left: 1px solid gray;
     text-align: center;
+}
+
+/* Footer */
+/* note: not ok for page with short content */
+.footer {
+    height: 50px;
+    background-color: #6CB9F5;
+    width: 100%;
+}
+
+/* Landing Page */
+.landing-cover img {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+}
+.landing-cover-image {
+    padding: 0;
+}
+.landing-section {
+    border-top: 2px solid tan;
+    height: 400px;
+}
+.landing-text {
+    background-color: #6CB9F5;
+    height: 100%;
+}
+.landing-pic {
+    background-color: gray;
+    height: 100%;
+}
+.image-hold {
+    background-color: gray;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    top: 125px;
+}
+
+/* Search Page */
+.geography .checkbox-group {
+    display: block;
+}
+.geography label {
+    margin-left: 3px;
+}
+.dropdown-group {
+    display: block;
 }

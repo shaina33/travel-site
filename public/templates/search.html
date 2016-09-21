@@ -1,2 +1,83 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
-<p style="margin-top: 70px">Search Page</p>
+
+<div ng-controller="SearchController" class="container-fluid form-control">
+    <p style="margin-top: 70px">Search Page</p>
+    
+    <div class="col-sm-3 search geography">
+        <div class="checkbox-group">
+            <input type="checkbox" ng-model="mySearch.northAmerica"><label>North America</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" ng-model="mySearch.centralAmerica"><label>Central America + Carribean</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" ng-model="mySearch.southAmerica"><label>South America</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" ng-model="mySearch.europe"><label>Europe</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" ng-model="mySearch.africa"><label>Africa</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" ng-model="mySearch.asia"><label>Asia</label>
+        </div>
+        <div class="checkbox-group">
+            <input type="checkbox" ng-model="mySearch.australia"><label>Australia + Pacific</label>
+        </div>
+    </div>
+    
+    <div class="col-sm-3 search activities">
+    </div>
+    
+    <div class="col-sm-3 search attributes">
+        <div class="dropdown-group">
+            <label>Major Language</label>
+            <select name="language" ng-model="mySearch.language">
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <option value="arabic">Arabic</option>
+            </select>
+        </div>
+        <div class="dropdown-group">
+            <label>Price Range</label>
+            <select name="price" ng-model="mySearch.price">
+                <option value="budget">Budget-friendly</option>
+                <option value="moderate">Moderate</option>
+                <option value="luxury">Luxury</option>
+            </select>
+        </div>    
+        <div class="dropdown-group">
+            <label>City Size</label>
+            <select name="size" ng-model="mySearch.size">
+                <option value="rural">Rural or Small Town</option>
+                <option value="smallCity">Small City</option>
+                <option value="majorCity">Major City</option>
+            </select>
+        </div>   
+        <div class="dropdown-group">
+            <label>Terrain / Climate</label>
+            <select name="terrain" ng-model="mySearch.size">
+                <option value="desert">Desert</option>
+                <option value="mountains">Mountains</option>
+                <option value="coast">On the coast</option>
+                <option value="coast">Rainforest</option>
+                <option value="coast">Temperate</option>
+                <option value="coast">Hot + Humid</option>
+            </select>
+        </div>  
+    </div>
+    
+    <div class="col-sm-3 search-button">
+        <button type="button" ng-click="search()">Search</button>
+    </div>
+    
+    <div class="col-xs-12 search-results">
+        <div ng-show="showResults">
+            <p>My search terms: {{ mySearch }}</p>
+            <p>{{ results }}</p>
+        </div>
+    </div>
+    
+</div>

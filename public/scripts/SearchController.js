@@ -1,16 +1,30 @@
 (function() {
-    function SearchCtrl ($scope) {
+    function SearchCtrl ($scope, $firebaseArray, Fixtures) {
+        
         $scope.showResults = false;
         $scope.search = function() {
+            $scope.results = $scope.destinations;
             $scope.showResults = true;
-//            if $scope.mySearch.northAmerica {
-//                $scope.results = "results in North America"
-//            }
-//            else {
-//                $scope.results = "results worldwide"
-//            }
-            $scope.results = "my results!"
         };
+        
+        var ref = firebase.database().ref().child("destinations");
+        $scope.destinations = $firebaseArray(ref);
+        $scope.addDestination = function(destinationObject) {
+            //console.log(destinationObject);
+            return $scope
+                .destinations
+                .$add(destinationObject);
+        };
+        $scope.seedDestinations = function() {
+            for (index in Fixtures.destinationSeeds) {
+                $scope.addDestination(Fixtures.destinationSeeds[index])
+                    .then(function() { console.log($scope.destinations);
+                //console.log(Fixtures.destinationSeeds[index].city);
+                    })
+            }
+        }
+        $scope.seedDestinations();
+        //console.log($scope.destinations);
     }
 
     angular

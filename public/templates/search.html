@@ -1,43 +1,49 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
 
 <div ng-controller="SearchController" class="container-fluid form-control">
-    <p style="margin-top: 70px">Search Page</p>
+    <h2 style="margin-top: 70px">Search Page</h2>
     
     <div class="col-sm-3 search geography">
-        <div class="checkbox-group">
-            <input type="checkbox" ng-model="mySearch.northAmerica"><label>North America</label>
+        <div class="radio-group">
+            <input type="radio" ng-model="mySearch.geography" value="northAmerica"><label>North America</label>
         </div>
-        <div class="checkbox-group">
-            <input type="checkbox" ng-model="mySearch.centralAmerica"><label>Central America + Carribean</label>
+        <div class="radio-group">
+            <input type="radio" ng-model="mySearch.geography" value="centralAmerica"><label>Central America + Carribean</label>
         </div>
-        <div class="checkbox-group">
-            <input type="checkbox" ng-model="mySearch.southAmerica"><label>South America</label>
+        <div class="radio-group">
+            <input type="radio" ng-model="mySearch.geography" value="southAmerica"><label>South America</label>
         </div>
-        <div class="checkbox-group">
-            <input type="checkbox" ng-model="mySearch.europe"><label>Europe</label>
+        <div class="radio-group">
+            <input type="radio" ng-model="mySearch.geography" value="europe"><label>Europe</label>
         </div>
-        <div class="checkbox-group">
-            <input type="checkbox" ng-model="mySearch.africa"><label>Africa</label>
+        <div class="radio-group">
+            <input type="radio" ng-model="mySearch.geography" value="africa"><label>Africa</label>
         </div>
-        <div class="checkbox-group">
-            <input type="checkbox" ng-model="mySearch.asia"><label>Asia</label>
+        <div class="radio-group">
+            <input type="radio" ng-model="mySearch.geography" value="asia"><label>Asia</label>
         </div>
-        <div class="checkbox-group">
-            <input type="checkbox" ng-model="mySearch.australia"><label>Australia + Pacific</label>
+        <div class="radio-group">
+            <input type="radio" ng-model="mySearch.geography" value="australia"><label>Australia + Pacific</label>
         </div>
     </div>
     
     <div class="col-sm-3 search activities">
+        <div class="radio-group">
+            <input type="radio" ng-model="mySearch.activity" value="nightlife"><label>Nightlife</label>
+        </div>
+        <div class="radio-group">
+            <input type="radio" ng-model="mySearch.activity" value="nature"><label>Nature + Wildlife</label>
+        </div>
     </div>
     
     <div class="col-sm-3 search attributes">
         <div class="dropdown-group">
             <label>Major Language</label>
             <select name="language" ng-model="mySearch.language">
-                <option value="english">English</option>
-                <option value="spanish">Spanish</option>
-                <option value="french">French</option>
-                <option value="arabic">Arabic</option>
+                <option value="English">English</option>
+                <option value="Spanish">Spanish</option>
+                <option value="French">French</option>
+                <option value="Arabic">Arabic</option>
             </select>
         </div>
         <div class="dropdown-group">
@@ -58,7 +64,7 @@
         </div>   
         <div class="dropdown-group">
             <label>Terrain / Climate</label>
-            <select name="terrain" ng-model="mySearch.size">
+            <select name="terrain" ng-model="mySearch.climate">
                 <option value="desert">Desert</option>
                 <option value="mountains">Mountains</option>
                 <option value="coast">On the coast</option>
@@ -75,8 +81,8 @@
     
     <div class="col-xs-12 search-results">
         <div ng-show="showResults">
-            <p>My search terms: {{ mySearch }}</p>
-            <p>My results:</p>
+            <p>My search terms are: {{ mySearch }}</p>
+            <p>My results are:</p>
             <div ng-repeat="result in results">
                 <br>
                 <p>Location: {{ result.city }}, {{ result.country }}</p>

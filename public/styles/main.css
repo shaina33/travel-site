@@ -48,12 +48,14 @@
 }
 
 /* Search Page */
-.geography .checkbox-group {
+.geography .radio-group {
     display: block;
 }
-.geography label {
-    margin-left: 3px;
+label {
+    margin-left: 4px;
 }
 .dropdown-group {
     display: block;
 }
+
+/* Resources Page */

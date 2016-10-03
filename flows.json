@@ -1,0 +1,125 @@
+[
+    {
+        "id": "7b2a9965.03ad18",
+        "type": "tab",
+        "label": "Flow 1"
+    },
+    {
+        "id": "9b3ae8de.501258",
+        "type": "mongodb",
+        "z": "7b2a9965.03ad18",
+        "hostname": "ds047146.mlab.com",
+        "port": "47146",
+        "db": "travel_site",
+        "name": ""
+    },
+    {
+        "id": "e4afdbf1.506aa8",
+        "type": "http in",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "url": "/search",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 97.5,
+        "y": 91,
+        "wires": [
+            [
+                "dae306c0.b9a698"
+            ]
+        ]
+    },
+    {
+        "id": "4f16cabe.278c84",
+        "type": "http response",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "x": 740.5,
+        "y": 85,
+        "wires": []
+    },
+    {
+        "id": "814cbe67.5d98d",
+        "type": "mongodb in",
+        "z": "7b2a9965.03ad18",
+        "mongodb": "9b3ae8de.501258",
+        "name": "Mongo Lab",
+        "collection": "Destinations",
+        "operation": "find",
+        "x": 508.5,
+        "y": 94,
+        "wires": [
+            [
+                "4f16cabe.278c84"
+            ]
+        ]
+    },
+    {
+        "id": "dae306c0.b9a698",
+        "type": "change",
+        "z": "7b2a9965.03ad18",
+        "name": "Limit: 10",
+        "rules": [
+            {
+                "t": "set",
+                "p": "limit",
+                "pt": "msg",
+                "to": "10",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "skip",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 265.5,
+        "y": 99,
+        "wires": [
+            [
+                "814cbe67.5d98d"
+            ]
+        ]
+    },
+    {
+        "id": "40724535.a2fafc",
+        "type": "inject",
+        "z": "7b2a9965.03ad18",
+        "name": "add basic city",
+        "topic": "",
+        "payload": "{\"city\":\"Marrakech\", \"language\":\"Arabic\"}",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 106.5,
+        "y": 192,
+        "wires": [
+            [
+                "4f41dae3.062704"
+            ]
+        ]
+    },
+    {
+        "id": "4f41dae3.062704",
+        "type": "mongodb out",
+        "z": "7b2a9965.03ad18",
+        "mongodb": "9b3ae8de.501258",
+        "name": "Insert data",
+        "collection": "Destinations",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 278.5,
+        "y": 190,
+        "wires": []
+    }
+]

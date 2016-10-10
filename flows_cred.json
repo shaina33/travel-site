@@ -2,5 +2,16 @@
     "9b3ae8de.501258": {
         "user": "shaina33",
         "password": "sillypass"
-    }
+    },
+    "cc5605e6.ad7fc8": {
+        "client_id": "c6e2fc1923d5407aa5f3d1afc3c43ea9",
+        "client_secret": "a1713ff32d1e484290e43ac13c9915df",
+        "redirect_uri": "http://localhost:3000/admin/instagram-credentials/auth/callback",
+        "code": "c2d35505cd1a4445ab57c40b76257ded",
+        "username": "shaina3300",
+        "access_token": "4006211828.c6e2fc1.c67dc7ef817744a3bd793cba6e2620f2",
+        "clientID": "c6e2fc1923d5407aa5f3d1afc3c43ea9",
+        "redirectURI": "http://localhost:3000/admin/instagram-credentials/auth/callback"
+    },
+    "6b80f48.b44ff0c": {}
 }

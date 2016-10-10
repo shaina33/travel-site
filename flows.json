@@ -14,6 +14,12 @@
         "name": ""
     },
     {
+        "id": "cc5605e6.ad7fc8",
+        "type": "instagram-credentials",
+        "z": "7b2a9965.03ad18",
+        "username": "shaina3300"
+    },
+    {
         "id": "e4afdbf1.506aa8",
         "type": "http in",
         "z": "7b2a9965.03ad18",
@@ -120,6 +126,84 @@
         "operation": "insert",
         "x": 278.5,
         "y": 190,
+        "wires": []
+    },
+    {
+        "id": "3f3e4ee4.c1c2b2",
+        "type": "instagram in",
+        "z": "7b2a9965.03ad18",
+        "instagram": "cc5605e6.ad7fc8",
+        "inputType": "photo",
+        "outputType": "buffer",
+        "name": "",
+        "x": 81.5,
+        "y": 297,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "80729ee0.0e5e2",
+        "type": "http in",
+        "z": "7b2a9965.03ad18",
+        "name": "post",
+        "url": "/search",
+        "method": "post",
+        "swaggerDoc": "",
+        "x": 91.5,
+        "y": 41,
+        "wires": [
+            [
+                "dae306c0.b9a698"
+            ]
+        ]
+    },
+    {
+        "id": "6b80f48.b44ff0c",
+        "type": "http request",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "https://api.instagram.com/v1/users/594916843/media/recent/?access_token=4006211828.1677ed0.9258763943704c289a987416778e08ab",
+        "tls": "",
+        "x": 284.5,
+        "y": 387,
+        "wires": [
+            [
+                "66704476.9f3e4c"
+            ]
+        ]
+    },
+    {
+        "id": "2ccc4ccc.308f94",
+        "type": "inject",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 78.5,
+        "y": 387,
+        "wires": [
+            [
+                "6b80f48.b44ff0c"
+            ]
+        ]
+    },
+    {
+        "id": "66704476.9f3e4c",
+        "type": "debug",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 466.5,
+        "y": 393,
         "wires": []
     }
 ]

@@ -405,6 +405,23 @@
      "file": "/Users/skAir/Development/BlocFrontend/travel-site/node_modules/node-red-node-mongodb/66-mongodb.js"
     }
    }
+  },
+  "node-red-node-instagram": {
+   "name": "node-red-node-instagram",
+   "version": "0.1.0",
+   "nodes": {
+    "instagram": {
+     "name": "instagram",
+     "types": [
+      "instagram-credentials",
+      "instagram",
+      "instagram in"
+     ],
+     "enabled": true,
+     "module": "node-red-node-instagram",
+     "file": "/Users/skAir/Development/BlocFrontend/travel-site/node_modules/node-red-node-instagram/instagram.js"
+    }
+   }
   }
  }
 }

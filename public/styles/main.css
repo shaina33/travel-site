@@ -58,4 +58,23 @@ label {
     display: block;
 }
 
+/* Inspiration Page */
+.powr-instagram-feed {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 /* Resources Page */
+
+.filter.active {
+    border: 1px solid black;
+}
+.cat1 {
+    background-color: aquamarine;
+}
+.cat2 {
+    background-color: pink;
+}
+.cat3 {
+    background-color: forestgreen;
+}

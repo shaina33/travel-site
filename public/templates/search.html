@@ -5,34 +5,34 @@
     
     <div class="col-sm-3 search geography">
         <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="northAmerica"><label>North America</label>
+            <input type="radio" ng-model="mySearch.geography" value="North America"><label>North America</label>
         </div>
         <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="centralAmerica"><label>Central America + Carribean</label>
+            <input type="radio" ng-model="mySearch.geography" value="Central America"><label>Central America + Carribean</label>
         </div>
         <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="southAmerica"><label>South America</label>
+            <input type="radio" ng-model="mySearch.geography" value="South America"><label>South America</label>
         </div>
         <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="europe"><label>Europe</label>
+            <input type="radio" ng-model="mySearch.geography" value="Europe"><label>Europe</label>
         </div>
         <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="africa"><label>Africa</label>
+            <input type="radio" ng-model="mySearch.geography" value="Africa"><label>Africa</label>
         </div>
         <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="asia"><label>Asia</label>
+            <input type="radio" ng-model="mySearch.geography" value="Asia"><label>Asia</label>
         </div>
         <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="australia"><label>Australia + Pacific</label>
+            <input type="radio" ng-model="mySearch.geography" value="Australia"><label>Australia + Pacific</label>
         </div>
     </div>
     
     <div class="col-sm-3 search activities">
         <div class="radio-group">
-            <input type="radio" ng-model="mySearch.activity" value="nightlife"><label>Nightlife</label>
+            <input type="radio" ng-model="mySearch.activity" value="Nightlife"><label>Nightlife</label>
         </div>
         <div class="radio-group">
-            <input type="radio" ng-model="mySearch.activity" value="nature"><label>Nature + Wildlife</label>
+            <input type="radio" ng-model="mySearch.activity" value="Nature"><label>Nature + Wildlife</label>
         </div>
     </div>
     
@@ -49,34 +49,34 @@
         <div class="dropdown-group">
             <label>Price Range</label>
             <select name="price" ng-model="mySearch.price">
-                <option value="budget">Budget-friendly</option>
-                <option value="moderate">Moderate</option>
-                <option value="luxury">Luxury</option>
+                <option value="Budget">Budget-friendly</option>
+                <option value="Moderate">Moderate</option>
+                <option value="Luxury">Luxury</option>
             </select>
         </div>    
         <div class="dropdown-group">
             <label>City Size</label>
             <select name="size" ng-model="mySearch.size">
-                <option value="rural">Rural or Small Town</option>
-                <option value="smallCity">Small City</option>
-                <option value="majorCity">Major City</option>
+                <option value="Rural">Rural or Small Town</option>
+                <option value="Small City">Small City</option>
+                <option value="Major City">Major City</option>
             </select>
         </div>   
         <div class="dropdown-group">
             <label>Terrain / Climate</label>
             <select name="terrain" ng-model="mySearch.climate">
-                <option value="desert">Desert</option>
-                <option value="mountains">Mountains</option>
-                <option value="coast">On the coast</option>
-                <option value="coast">Rainforest</option>
-                <option value="coast">Temperate</option>
-                <option value="coast">Hot + Humid</option>
+                <option value="Desert">Desert</option>
+                <option value="Mountains">Mountains</option>
+                <option value="Coast">On the coast</option>
+                <option value="Rainforest">Rainforest</option>
+                <option value="Temperate">Temperate</option>
             </select>
         </div>  
     </div>
     
     <div class="col-sm-3 search-button">
         <button type="button" ng-click="search()">Search</button>
+        <button type="button" ng-click="reset()">Clear all selections</button>
     </div>
     
     <div class="col-xs-12 search-results">

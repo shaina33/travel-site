@@ -1,3 +1,8 @@
+/*  Additional CSS:
+    Noramalize.css
+    Bootstrap
+*/
+
 /* Navigation Bar */
 .navbar-nav {
     width: 90%;
@@ -66,15 +71,82 @@ label {
 
 /* Resources Page */
 
-.filter.active {
-    border: 1px solid black;
+#container-resources {
+/*     use different photo! */
+/*     narrow width causes blank space on short resource list! */
+    background: url(/assets/tunnel-beach.jpg) repeat center fixed;
+    background-size: cover;
+    background-clip: padding-box;
 }
-.cat1 {
+
+#filterOptions {
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.filter {
+    display: flex;
+    justify-content: space-around;
+    height: 10vw;
+    width: 10vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-left: 5vw;
+    margin-bottom: 5vw;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.5vw;
+    padding-top: 7vw;
+}
+.filter.active {
+    color: white;
+    text-decoration: underline;
+}
+.filter:hover {
+    color: white;
+}
+.filter:first-child {
+    margin-left: 0;
+}
+
+#dataHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 120px; /* ensures background covers bottom */
+}
+.item {
+    height: 10vw;
+    width: 65vw;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 3vw;
+    background-color: white;
+    opacity: .7;
+    overflow: hidden;
+}
+.item h3 {
+    padding-left: 1vw;
+}
+.item p {
+    padding-left: 1vw;
+}
+.item a {
+    color: black;
+}
+/* need to redefine a::visited behavior? */
+
+filter.all {
+    background-color: gray;
+}
+filter.cat1 {
     background-color: aquamarine;
 }
-.cat2 {
+filter.cat2 {
     background-color: pink;
 }
-.cat3 {
+filter.cat3 {
     background-color: forestgreen;
 }

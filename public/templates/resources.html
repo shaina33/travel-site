@@ -1,13 +1,13 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
 <div class="container-fluid" id="container-resources" ng-controller="ResourcesController">
-    <h2 style="margin-top: 70px">Resources</h2>
+    <h1>Travel Resources</h1>
     
-    <ul id="filterOptions" ng-click="filterClicked($event)">
+    <ul id="filterOptions">
        <!-- category must be listed as 2nd class on filter -->
-        <li class="filter all active first">All</li>
-        <li class="filter cat1">Category 1</li>
-        <li class="filter cat2">Category 2</li>
-        <li class="filter cat3">Category 3</li>
+        <li class="filter all active first" ng-click="filterClicked($event)">All</li>
+        <li class="filter cat1" ng-click="filterClicked($event)">Category 1</li>
+        <li class="filter cat2" ng-click="filterClicked($event)">Category 2</li>
+        <li class="filter cat3" ng-click="filterClicked($event)">Category 3</li>
     </ul>
     <div id="dataHolder">
         <div class="item cat1"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>

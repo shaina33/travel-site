@@ -3,6 +3,14 @@
     Bootstrap
 */
 
+/* General */
+h1 {
+    font-size: 6rem;
+    margin-top: 80px; /* avoid overlap with navbar */
+    margin-bottom: 4vw;
+    text-align: center;
+}
+
 /* Navigation Bar */
 .navbar-nav {
     width: 90%;
@@ -73,8 +81,8 @@ label {
 
 #container-resources {
 /*     use different photo! */
-/*     narrow width causes blank space on short resource list! */
-    background: url(/assets/tunnel-beach.jpg) repeat center fixed;
+/*     short content can cause blank space on bottom */
+    background: url(/assets/tunnel-beach.jpg) no-repeat center fixed;
     background-size: cover;
     background-clip: padding-box;
 }
@@ -84,28 +92,30 @@ label {
     padding: 0;
     margin: 0 auto;
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
 }
 .filter {
     display: flex;
     justify-content: space-around;
-    height: 10vw;
-    width: 10vw;
-    border: 1px solid black;
+    align-items: flex-end;
+    height: calc(2.5rem + 8vw); /* 10vw */
+    width: calc(2.5rem + 8vw);
     border-radius: 10px;
     margin-left: 5vw;
     margin-bottom: 5vw;
     overflow: hidden;
     position: relative;
-    font-size: 1.5vw;
+    font-size: calc(0.7rem + 1vw); /* 1.5vw */
+    color: white;
     padding-top: 7vw;
 }
 .filter.active {
-    color: white;
     text-decoration: underline;
+    border: 1px solid white;
 }
 .filter:hover {
-    color: white;
+    text-decoration: underline;
 }
 .filter:first-child {
     margin-left: 0;
@@ -115,14 +125,14 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 120px; /* ensures background covers bottom */
+    /* padding ensures background covers bottom with only 2 items */
+    padding-bottom: 130px;
 }
 .item {
-    height: 10vw;
-    width: 65vw;
+    width: 70vw;
     border: 1px solid black;
     border-radius: 10px;
-    margin-bottom: 3vw;
+    margin-bottom: 4vw;
     background-color: white;
     opacity: .7;
     overflow: hidden;
@@ -137,16 +147,3 @@ label {
     color: black;
 }
 /* need to redefine a::visited behavior? */
-
-filter.all {
-    background-color: gray;
-}
-filter.cat1 {
-    background-color: aquamarine;
-}
-filter.cat2 {
-    background-color: pink;
-}
-filter.cat3 {
-    background-color: forestgreen;
-}

@@ -1,9 +1,25 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
-<h1>Inspiration Page</h1>
+<div id="inspiration-wrapper" ng-controller="InspirationController">
+    <h1>Get Inspired to Travel!</h1>
+    <div class="instafeed-wrapper">
+       <div class="instafeed-header">
+           @NatGeoTravel
+       </div>
+        <div class="instafeed" id="instafeed1"></div>
+    </div>
+    <div class="instafeed-wrapper">
+       <div class="instafeed-header">
+           @ExploringTheGlobe
+       </div>
+        <div class="instafeed" id="instafeed2"></div>
+    </div>
+</div>
 
+<!-- OpenStreetMap:
 <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-25.8837890625%2C30.600093873550072%2C25.312500000000004%2C52.214338608258224&amp;layer=transportmap" style="border: 1px solid black"></iframe>
+-->
 
-<!--
+<!-- Youtube Timelapses:
 <div class="youtube-timelapse col-md-4">
     <p>Do you love the natural world?</p>
     <iframe width="448" height="252" src="https://www.youtube.com/embed/iO0wmXxY_5I" frameborder="0" allowfullscreen></iframe>
@@ -13,5 +29,3 @@
     <p>Or exploring new architecture?</p>
 </div>
 -->
-
-<div class="powr-instagram-feed col-md-8" id="d6a25891_1475596986"></div>

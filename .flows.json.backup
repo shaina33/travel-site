@@ -165,7 +165,7 @@
         "name": "",
         "method": "GET",
         "ret": "txt",
-        "url": " https://api.instagram.com/v1/users/594916843/media/recent/?access_token=4006211828.1677ed0.9258763943704c289a987416778e08ab",
+        "url": "https://api.instagram.com/v1/users/594916843/media/recent/?access_token=4006211828.1677ed0.9258763943704c289a987416778e08ab",
         "tls": "",
         "x": 284.5,
         "y": 387,
@@ -204,6 +204,114 @@
         "complete": "false",
         "x": 466.5,
         "y": 393,
+        "wires": []
+    },
+    {
+        "id": "8333e7f8.62b518",
+        "type": "http request",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "https://en.wikipedia.org/wiki/Buenos_Aires",
+        "tls": "",
+        "x": 250.5,
+        "y": 472,
+        "wires": [
+            [
+                "acd8d6b0.35c358"
+            ]
+        ]
+    },
+    {
+        "id": "acd8d6b0.35c358",
+        "type": "html",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "tag": ".infobox.geography.vcard",
+        "ret": "html",
+        "as": "single",
+        "x": 465.5,
+        "y": 469,
+        "wires": [
+            [
+                "7cc564d1.83ac2c",
+                "cb841a7e.728bf8"
+            ]
+        ]
+    },
+    {
+        "id": "7cc564d1.83ac2c",
+        "type": "debug",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 698.5,
+        "y": 463,
+        "wires": []
+    },
+    {
+        "id": "9ac7795.d2f2188",
+        "type": "inject",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 91.5,
+        "y": 450,
+        "wires": [
+            [
+                "8333e7f8.62b518"
+            ]
+        ]
+    },
+    {
+        "id": "93e1420b.e8c8f",
+        "type": "http in",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "url": "/city",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 70.5,
+        "y": 523,
+        "wires": [
+            [
+                "8333e7f8.62b518"
+            ]
+        ]
+    },
+    {
+        "id": "cb841a7e.728bf8",
+        "type": "template",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "This is the payload: {{unescape(payload)}} !",
+        "x": 684.5,
+        "y": 519,
+        "wires": [
+            [
+                "b695a6ed.37c828"
+            ]
+        ]
+    },
+    {
+        "id": "b695a6ed.37c828",
+        "type": "http response",
+        "z": "7b2a9965.03ad18",
+        "name": "",
+        "x": 816.5,
+        "y": 517,
         "wires": []
     }
 ]

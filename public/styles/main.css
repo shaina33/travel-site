@@ -6,7 +6,7 @@
 /* General */
 h1 {
     font-size: 6rem;
-    margin-top: 80px; /* avoid overlap with navbar */
+    padding-top: 80px; /* avoid overlap with navbar */
     margin-bottom: 4vw;
     text-align: center;
 }
@@ -72,10 +72,70 @@ label {
 }
 
 /* Inspiration Page */
-.powr-instagram-feed {
-    padding-left: 0;
-    padding-right: 0;
+
+#inspiration-wrapper {
+    background-color: #66a3ff;
 }
+.instafeed-wrapper {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 2vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    background-color: ghostwhite;
+}
+.instafeed-header {
+    background-color: lightgray;
+    font-size: 3rem;
+    border-bottom: 1px solid black;
+    border-radius: 10px 10px 0 0;
+    padding: 1vw;
+}
+.instafeed {
+    padding-top: 1vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.instaphoto {
+    position: relative;
+}
+.instaphoto img {
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.photo-info {
+    display: none; /* flex, when visible */
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-color: black;
+    opacity: .5;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*
+.instaphoto p {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 2px 1vw 2px;
+    border-width: 0 2px 2px 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+}
+*/
 
 /* Resources Page */
 
@@ -108,7 +168,7 @@ label {
     position: relative;
     font-size: calc(0.7rem + 1vw); /* 1.5vw */
     color: white;
-    padding-top: 7vw;
+    /* padding-top: 7vw; */
 }
 .filter.active {
     text-decoration: underline;

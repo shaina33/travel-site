@@ -13,8 +13,5 @@
         "clientID": "c6e2fc1923d5407aa5f3d1afc3c43ea9",
         "redirectURI": "http://localhost:3000/admin/instagram-credentials/auth/callback"
     },
-    "6b80f48.b44ff0c": {
-        "user": "shaina33",
-        "password": "sillypassword"
-    }
+    "6b80f48.b44ff0c": {}
 }

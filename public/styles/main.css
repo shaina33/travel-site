@@ -1,17 +1,10 @@
 /*  Additional CSS:
-    Noramalize.css
+    Normalize.css
     Bootstrap
 */
 
 /* General */
-h1 {
-    font-size: 6rem;
-    padding-top: 80px; /* avoid overlap with navbar */
-    margin-bottom: 4vw;
-    text-align: center;
-}
 
-/* Navigation Bar */
 .navbar-nav {
     width: 90%;
 }
@@ -21,16 +14,35 @@ h1 {
     text-align: center;
 }
 
-/* Footer */
-/* note: not ok for page with short content */
-.footer {
-    height: 50px;
-    background-color: #6CB9F5;
-    width: 100%;
+h1 {
+    font-size: 6rem;
+    padding-top: 80px; /* avoid overlap with navbar */
+    margin-bottom: 4vw;
+    text-align: center;
 }
 
+.footer {
+    text-align: center;
+    padding: 5px;
+}
+.footer a {
+    text-decoration: underline;
+}
+.footer p {
+    margin-bottom: 0;
+}
+.white {
+    color: white;
+}
+.black {
+    color: black;
+}
+
+/*---------------------------------------------*/
+
 /* Landing Page */
-.landing-cover img {
+/* use different photo! */
+.landing-cover-image img {
     position: relative;
     width: 100%;
     max-width: 1500px;
@@ -60,7 +72,13 @@ h1 {
     top: 125px;
 }
 
+/*---------------------------------------------*/
+
 /* Search Page */
+/* see .item from Resources section */
+#search-container {
+    background-color: lightblue;
+}
 .geography .radio-group {
     display: block;
 }
@@ -70,6 +88,11 @@ label {
 .dropdown-group {
     display: block;
 }
+.dest-info  {
+    color: black;
+}
+
+/*---------------------------------------------*/
 
 /* Inspiration Page */
 
@@ -90,6 +113,11 @@ label {
     border-bottom: 1px solid black;
     border-radius: 10px 10px 0 0;
     padding: 1vw;
+}
+.instagram-logo {
+    height: 3rem;
+    padding-right: 1vw;
+    margin-top: -10px;
 }
 .instafeed {
     padding-top: 1vw;
@@ -123,26 +151,13 @@ label {
     justify-content: center;
 }
 
-/*
-.instaphoto p {
-    display: flex;
-    justify-content: space-between;
-    padding: 2px 2px 1vw 2px;
-    border-width: 0 2px 2px 2px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 0 0 10px 10px;
-    margin-bottom: 1vw;
-    margin-right: 1vw;
-}
-*/
+/*---------------------------------------------*/
 
 /* Resources Page */
 
-#container-resources {
-/*     use different photo! */
+.resources-container {
 /*     short content can cause blank space on bottom */
-    background: url(/assets/tunnel-beach.jpg) no-repeat center fixed;
+    background: url('/assets/tunnel-beach.jpg') no-repeat center fixed;
     background-size: cover;
     background-clip: padding-box;
 }
@@ -166,7 +181,7 @@ label {
     margin-bottom: 5vw;
     overflow: hidden;
     position: relative;
-    font-size: calc(0.7rem + 1vw); /* 1.5vw */
+    font-size: calc(0.5rem + 1vw); /* 1.5vw */
     color: white;
     /* padding-top: 7vw; */
 }
@@ -179,6 +194,12 @@ label {
 }
 .filter:first-child {
     margin-left: 0;
+}
+.resource-icon {
+    height: calc(1rem + 8vw);
+    position: absolute;
+    z-index: 2;
+    padding-bottom: 3vw;
 }
 
 #dataHolder {

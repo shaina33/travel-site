@@ -1,17 +1,31 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
-<div class="container-fluid" id="container-resources" ng-controller="ResourcesController">
+<div class="container-fluid resources-container" ng-controller="ResourcesController">
     <h1>Travel Resources</h1>
     
     <ul id="filterOptions">
        <!-- category must be listed as 2nd class on filter -->
-        <li class="filter all active first" ng-click="filterClicked($event)">All</li>
-        <li class="filter cat1" ng-click="filterClicked($event)">Category 1</li>
-        <li class="filter cat2" ng-click="filterClicked($event)">Category 2</li>
-        <li class="filter cat3" ng-click="filterClicked($event)">Category 3</li>
+        <li class="filter all active first" ng-click="filterClicked($event)">
+            <img class="resource-icon" src="/assets/books-white-filled-100px.png"/>
+            All</li>
+        <li class="filter cat-activ" ng-click="filterClicked($event)">
+            <img class="resource-icon" src="/assets/map-white-filled-100px.png"/>
+            Activities</li>
+        <li class="filter cat-trans" ng-click="filterClicked($event)">
+            <img class="resource-icon" src="/assets/airplane-white-filled-100px.png"/>
+            Transportation</li>
+        <li class="filter cat-lodg" ng-click="filterClicked($event)">
+            <img class="resource-icon" src="/assets/bed-white-filled-100px.png"/>
+            Lodging</li>
+        <li class="filter cat-inv" ng-click="filterClicked($event)">
+            <img class="resource-icon" src="/assets/volunteer-white-filled-100px.png"/>
+            Get Involved</li>
+        <li class="filter cat-other" ng-click="filterClicked($event)">
+            <img class="resource-icon" src="/assets/medical-white-filled-100px.png"/>
+            Other</li>
     </ul>
     <div id="dataHolder">
-        <div class="item cat1"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
-        <div class="item cat3"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
+        <div class="item {{category}}"><h3><a href="{{webLink}}">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
+        <div class="item cat-trans"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
         <div class="item cat2"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
         <div class="item cat1"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
         <div class="item cat1"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
@@ -20,5 +34,6 @@
         <div class="item cat1"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
         <div class="item cat3"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
     </div>
+    <ng-include src="'/templates/footer-white.html'"></ng-include>
 </div>
 

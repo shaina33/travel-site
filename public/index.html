@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>My Travel Site</title>
+        <base target="_blank">
 
         <!-- Normalize.css -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -29,8 +30,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
         
-        <!-- Social Feeds -->
-        <!-- <script src="//www.powr.io/powr.js" external-type="html"></script> -->
+        <!-- Social Media Tools -->
         <script src="/scripts/instafeed.js"></script>
         
         <!-- local scripts -->
@@ -39,5 +39,19 @@
         <script src="/scripts/SearchController.js"></script>
         <script src="/scripts/ResourcesController.js"></script>
         <script src="/scripts/InspirationController.js"></script>
+        <script>
+        $(document).ready( function() {
+            $(document).on('mouseover', ".instaphoto",
+                function(event) {
+                    console.log('mouseover event!')
+                    console.log(event);
+                });
+            $(document).on('mouseleave', ".instaphoto",
+                function(event) {
+                    console.log('mouseleave event!')
+                    console.log(event);
+                });
+        })
+        </script>
     </body>
 </html>

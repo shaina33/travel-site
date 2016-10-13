@@ -41,16 +41,10 @@
             sortBy: 'most-liked',
             success: $scope.addListeners                    
         });
-        $scope.addListeners = function() {
-            console.log('addListeners called');
-            $('.instaphoto').hover(
-                function() {
-                    console.log('hover');
-                },
-                function() {
-                    console.log('leave');
-                });
-        }
+//        $scope.addListeners = function() {
+//            console.log('addListeners called');
+//            
+//        }
         
 //        in html template:
 //        ng-mouseenter="photoHover($event)" \

@@ -1,95 +1,102 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
 
-<div ng-controller="SearchController" class="container-fluid form-control">
+<div ng-controller="SearchController" id="search-container" class="container-fluid">
     <h1>Search Page</h1>
     
-    <div class="col-sm-3 search geography">
-        <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="North America"><label>North America</label>
+    <div id="form-control">
+        <div class="col-sm-3 search geography">
+            <div class="radio-group">
+                <input type="radio" ng-model="mySearch.geography" value="North America"><label>North America</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" ng-model="mySearch.geography" value="Central America"><label>Central America + Carribean</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" ng-model="mySearch.geography" value="South America"><label>South America</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" ng-model="mySearch.geography" value="Europe"><label>Europe</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" ng-model="mySearch.geography" value="Africa"><label>Africa</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" ng-model="mySearch.geography" value="Asia"><label>Asia</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" ng-model="mySearch.geography" value="Australia"><label>Australia + Pacific</label>
+            </div>
         </div>
-        <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="Central America"><label>Central America + Carribean</label>
+
+        <div class="col-sm-3 search activities">
+            <div class="radio-group">
+                <input type="radio" ng-model="mySearch.activity" value="Nightlife"><label>Nightlife</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" ng-model="mySearch.activity" value="Nature"><label>Nature + Wildlife</label>
+            </div>
         </div>
-        <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="South America"><label>South America</label>
+
+        <div class="col-sm-3 search attributes">
+            <div class="dropdown-group">
+                <label>Major Language</label>
+                <select name="language" ng-model="mySearch.language">
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="French">French</option>
+                    <option value="Arabic">Arabic</option>
+                </select>
+            </div>
+            <div class="dropdown-group">
+                <label>Price Range</label>
+                <select name="price" ng-model="mySearch.price">
+                    <option value="Budget">Budget-friendly</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Luxury">Luxury</option>
+                </select>
+            </div>    
+            <div class="dropdown-group">
+                <label>City Size</label>
+                <select name="size" ng-model="mySearch.size">
+                    <option value="Rural">Rural or Small Town</option>
+                    <option value="Small City">Small City</option>
+                    <option value="Major City">Major City</option>
+                </select>
+            </div>   
+            <div class="dropdown-group">
+                <label>Terrain / Climate</label>
+                <select name="terrain" ng-model="mySearch.climate">
+                    <option value="Desert">Desert</option>
+                    <option value="Mountains">Mountains</option>
+                    <option value="Coast">On the coast</option>
+                    <option value="Rainforest">Rainforest</option>
+                    <option value="Temperate">Temperate</option>
+                </select>
+            </div>  
         </div>
-        <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="Europe"><label>Europe</label>
-        </div>
-        <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="Africa"><label>Africa</label>
-        </div>
-        <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="Asia"><label>Asia</label>
-        </div>
-        <div class="radio-group">
-            <input type="radio" ng-model="mySearch.geography" value="Australia"><label>Australia + Pacific</label>
+
+        <div class="col-sm-3 search-button">
+            <button type="button" ng-click="search()">Search</button>
+            <button type="button" ng-click="reset()">Clear all selections</button>
         </div>
     </div>
-    
-    <div class="col-sm-3 search activities">
-        <div class="radio-group">
-            <input type="radio" ng-model="mySearch.activity" value="Nightlife"><label>Nightlife</label>
-        </div>
-        <div class="radio-group">
-            <input type="radio" ng-model="mySearch.activity" value="Nature"><label>Nature + Wildlife</label>
-        </div>
-    </div>
-    
-    <div class="col-sm-3 search attributes">
-        <div class="dropdown-group">
-            <label>Major Language</label>
-            <select name="language" ng-model="mySearch.language">
-                <option value="English">English</option>
-                <option value="Spanish">Spanish</option>
-                <option value="French">French</option>
-                <option value="Arabic">Arabic</option>
-            </select>
-        </div>
-        <div class="dropdown-group">
-            <label>Price Range</label>
-            <select name="price" ng-model="mySearch.price">
-                <option value="Budget">Budget-friendly</option>
-                <option value="Moderate">Moderate</option>
-                <option value="Luxury">Luxury</option>
-            </select>
-        </div>    
-        <div class="dropdown-group">
-            <label>City Size</label>
-            <select name="size" ng-model="mySearch.size">
-                <option value="Rural">Rural or Small Town</option>
-                <option value="Small City">Small City</option>
-                <option value="Major City">Major City</option>
-            </select>
-        </div>   
-        <div class="dropdown-group">
-            <label>Terrain / Climate</label>
-            <select name="terrain" ng-model="mySearch.climate">
-                <option value="Desert">Desert</option>
-                <option value="Mountains">Mountains</option>
-                <option value="Coast">On the coast</option>
-                <option value="Rainforest">Rainforest</option>
-                <option value="Temperate">Temperate</option>
-            </select>
-        </div>  
-    </div>
-    
-    <div class="col-sm-3 search-button">
-        <button type="button" ng-click="search()">Search</button>
-        <button type="button" ng-click="reset()">Clear all selections</button>
-    </div>
-    
+   
     <div class="col-xs-12 search-results">
         <div ng-show="showResults">
             <p>My search terms are: {{ mySearch }}</p>
             <p>My results are:</p>
             <div ng-repeat="result in results">
-                <br>
-                <p>Location: {{ result.city }}, {{ result.country }}</p>
-                <p>Language: {{ result.language }}</p>
-                <p>Terrain: {{ result.terrain }}</p>
+                <div class="item">
+                   <div class="dest-info">
+                        <h3>{{ result.city }}, {{ result.country }}</h3>
+                        <p>Language: {{ result.language }}</p>
+                        <p>Terrain: {{ result.terrain }}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    
+
+    <ng-include class="col-xs-12" src="'/templates/footer-black.html'"></ng-include>
+
 </div>

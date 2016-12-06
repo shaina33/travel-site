@@ -131,24 +131,42 @@ label {
 .instaphoto {
     position: relative;
 }
-.instaphoto img {
+.photo-background {
+    top: 0;
     margin-right: 5px;
     margin-bottom: 10px;
     border: 2px solid black;
     border-radius: 10px;
 }
 .photo-info {
-    display: none; /* flex, when visible */
+    display: flex;
     position: absolute;
     top: 2px;
     left: 2px;
+    bottom: 2px;
+    padding-top: 30%;
     background-color: black;
-    opacity: .5;
+    /* opacity 0.75 when showing */
     border-radius: 8px;
     color: white;
     text-align: center;
     flex-direction: column;
     justify-content: center;
+}
+
+.no-show {
+    opacity: 0;
+/*
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+*/
+}
+.show {
+    opacity: 0.75;
+/*
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+*/
 }
 
 /*---------------------------------------------*/

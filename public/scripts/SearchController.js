@@ -1,26 +1,41 @@
 (function() {
     function SearchCtrl ($scope, Fixtures, $http) {
         
-/*  $scope.mySearch can include:
-    .geography
-    [North America, South America, Central America, Europe, Africa, Asia, Australia]
-    .activity
-    [Nightlife, Nature]
-    .language
-    [English, Spanish, French, Arabic]
-    .price
-    [Budget, Moderate, Luxury]
-    .size
-    [Rural, Small City, Major City]
-    .climate
-    [Desert, Mountains, Rainforest, Temperate]
-*/
-        
         $scope.search = function() {
             $scope.results = [];
             $scope.showResults = false;
             if ($scope.mySearch !== undefined) {
-                $scope.mySearch["geography"] = {$in: ["North America", "South America"]};
+                
+                // process multi-choice search fields
+                $scope.prepGeo = function() {
+                    $scope.mySearch.geography.terms = []
+                    if ($scope.mySearch.geography.northAmerica) {
+                        $scope.mySearch.geography.terms.push("North America")
+                    }
+                    if ($scope.mySearch.geography.centralAmerica) {
+                        $scope.mySearch.geography.terms.push("Central America")
+                    }
+                    if ($scope.mySearch.geography.southAmerica) {
+                        $scope.mySearch.geography.terms.push("South America")
+                    }
+                    if ($scope.mySearch.geography.europe) {
+                        $scope.mySearch.geography.terms.push("Europe")
+                    }
+                    if ($scope.mySearch.geography.africa) {
+                        $scope.mySearch.geography.terms.push("Africa")
+                    }
+                    if ($scope.mySearch.geography.asia) {
+                        $scope.mySearch.geography.terms.push("Asia")
+                    }
+                    if ($scope.mySearch.geography.australia) {
+                        $scope.mySearch.geography.terms.push("Australia")
+                    }
+                    return $scope.mySearch.geography.terms
+                    
+                }
+                $scope.mySearch.geography = {$in: $scope.prepGeo()}
+                
+                // send mySearch query to database
                 $http.post('/search', $scope.mySearch)
                      .then(
                         function(response) {

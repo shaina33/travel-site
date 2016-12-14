@@ -8,9 +8,11 @@
             '<div class="instaphoto">\
                 <img src="{{image}}" class="photo-background"/>\
                 <div class="photo-info no-show" style="height: {{height}}; width: {{width}}">\
-                    <p>{{location}}</p>\
-                    <p><span><3</span> {{likes}} likes</p>\
-                    <a href="{{link}}">View on Instagram</a>\
+                    <div class="photo-text">\
+                        <p>{{location}}</p>\
+                        <p><span><3</span> {{likes}} likes</p>\
+                        <a href="{{link}}">View on Instagram</a>\
+                    </div>\
                 </div>\
              </div>'
         $scope.instafeed1 = new Instafeed({

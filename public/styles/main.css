@@ -99,21 +99,19 @@ label {
 /* Inspiration Page */
 
 #inspiration-wrapper {
-    background-color: #66a3ff;
+/*    background-color: #66a3ff;*/
+    background: -webkit-linear-gradient(left, rgb(167, 211, 251), rgb(61, 147, 233));
+    background: -o-linear-gradient(left, rgb(167, 211, 251), rgb(61, 147, 233));
+    background: linear-gradient(to right, rgb(167, 211, 251), rgb(61, 147, 233));
 }
 .instafeed-wrapper {
-    border: 1px solid black;
-    border-radius: 10px;
     margin-bottom: 2vw;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    background-color: ghostwhite;
 }
 .instafeed-header {
-    background-color: lightgray;
+    background-color: #A7D3FB;
     font-size: 3rem;
+    border-top: 1px solid black;
     border-bottom: 1px solid black;
-    border-radius: 10px 10px 0 0;
     padding: 1vw;
 }
 .instagram-logo {
@@ -139,14 +137,14 @@ label {
     margin-bottom: 10px;
     border: 2px solid black;
     border-radius: 10px;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
 .photo-info {
     display: flex;
     position: absolute;
     top: 2px;
     left: 2px;
-    bottom: 2px;
-    padding-top: 30%;
+    padding-top: 5vh;
     background-color: black;
     /* opacity 0.75 when showing */
     border-radius: 8px;
@@ -154,21 +152,21 @@ label {
     text-align: center;
     flex-direction: column;
     justify-content: center;
+/*    display: table;*/
 }
+/*
+.photo-text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+*/
 
 .no-show {
     opacity: 0;
-/*
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-*/
 }
 .show {
     opacity: 0.75;
-/*
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-*/
 }
 
 /*---------------------------------------------*/

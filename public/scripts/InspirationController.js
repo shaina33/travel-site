@@ -47,22 +47,6 @@
         $scope.instafeed2.run();
         
         // Mouse Hover Interaction on Instafeed photos
-        
-//            $(document).ready(function() {
-//                console.log('using JS!');
-//                $(".photo-info").hover(
-//                    function() {
-//                        console.log("mouse hover ON event!");
-//                        $(this).removeClass("no-show");
-//                        $(this).addClass("show");
-//                    }, function() {
-//                        console.log("mouse hover OFF event!");
-//                        $(this).removeClass("show");
-//                        $(this).addClass("no-show");
-//                    }
-//                );
-//            });
-        
         $(document).ready(function() {
             $(document).on('mouseover', ".photo-info", function(event) {
                 console.log(event);

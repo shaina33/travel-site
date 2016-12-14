@@ -82,14 +82,13 @@ h1 {
 #search-container {
     background-color: lightblue;
 }
-.geography .radio-group {
+.radio-group
+.checkbox-group
+.dropdown-group {
     display: block;
 }
 label {
     margin-left: 4px;
-}
-.dropdown-group {
-    display: block;
 }
 .dest-info  {
     color: black;

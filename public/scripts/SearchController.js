@@ -1,47 +1,60 @@
 (function() {
-    function SearchCtrl ($scope, Fixtures, $http) {
+    function SearchCtrl ($scope, Fixtures, $http, $localStorage) {
+        
+        if ($localStorage.savedTerms) {
+            $scope.terms = $localStorage.savedTerms;
+        }
         
         $scope.search = function() {
             $scope.results = [];
             $scope.showResults = false;
-            if ($scope.mySearch !== undefined) {
+            if ($scope.terms !== undefined) {
                 
-                // process multi-choice search fields
+                // save user's selections
+                $localStorage.savedTerms = $scope.terms;
+                
+                // process search terms into mySearch query
+                $scope.mySearch = {}
                 $scope.prepGeo = function() {
-                    $scope.mySearch.geography.terms = []
-                    if ($scope.mySearch.geography.northAmerica) {
-                        $scope.mySearch.geography.terms.push("North America")
+                    $scope.mySearch.geography = []
+                    if ($scope.terms.geography.northAmerica) {
+                        $scope.mySearch.geography.push("North America")
                     }
-                    if ($scope.mySearch.geography.centralAmerica) {
-                        $scope.mySearch.geography.terms.push("Central America")
+                    if ($scope.terms.geography.centralAmerica) {
+                        $scope.mySearch.geography.push("Central America")
                     }
-                    if ($scope.mySearch.geography.southAmerica) {
-                        $scope.mySearch.geography.terms.push("South America")
+                    if ($scope.terms.geography.southAmerica) {
+                        $scope.mySearch.geography.push("South America")
                     }
-                    if ($scope.mySearch.geography.europe) {
-                        $scope.mySearch.geography.terms.push("Europe")
+                    if ($scope.terms.geography.europe) {
+                        $scope.mySearch.geography.push("Europe")
                     }
-                    if ($scope.mySearch.geography.africa) {
-                        $scope.mySearch.geography.terms.push("Africa")
+                    if ($scope.terms.geography.africa) {
+                        $scope.mySearch.geography.push("Africa")
                     }
-                    if ($scope.mySearch.geography.asia) {
-                        $scope.mySearch.geography.terms.push("Asia")
+                    if ($scope.terms.geography.asia) {
+                        $scope.mySearch.geography.push("Asia")
                     }
-                    if ($scope.mySearch.geography.australia) {
-                        $scope.mySearch.geography.terms.push("Australia")
+                    if ($scope.terms.geography.australia) {
+                        $scope.mySearch.geography.push("Australia")
                     }
-                    return $scope.mySearch.geography.terms
+                    return {$in: $scope.mySearch.geography};
                     
-                }
-                $scope.mySearch.geography = {$in: $scope.prepGeo()}
+                };
+                $scope.mySearch.geography = $scope.prepGeo();
+                $scope.mySearch.activities = $scope.terms.activities;
+                $scope.mySearch.language = $scope.terms.language;
+                $scope.mySearch.price = $scope.terms.price;
+                $scope.mySearch.size = $scope.terms.size;
+                $scope.mySearch.climate = $scope.terms.climate;
                 
                 // send mySearch query to database
                 $http.post('/search', $scope.mySearch)
                      .then(
                         function(response) {
-                            console.log('mySearch: ',$scope.mySearch);
+                            console.log('mySearch: ', $scope.mySearch);
                             $scope.results = response.data;
-                            console.log(response.data);
+                            console.log($scope.results);
                             $scope.showResults = true;
                         }, function(error) {
                             console.log(error);
@@ -53,7 +66,10 @@
         }
         
         $scope.reset = function() {
+            $scope.terms = {}
             $scope.mySearch = {};
+            $localStorage.savedTerms = {};
+            $scope.showResults = false;
         }
     }
 

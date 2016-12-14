@@ -6,41 +6,41 @@
     <div id="form-control">
         <div class="col-sm-3 search geography">
             <div class="radio-group">
-                <input type="checkbox" ng-model="mySearch.geography.northAmerica"><label>North America</label>
+                <input type="checkbox" ng-model="terms.geography.northAmerica"><label>North America</label>
             </div>
-            <div class="radio-group">
-                <input type="checkbox" ng-model="mySearch.geography.centralAmerica"><label>Central America + Carribean</label>
+            <div class="checkbox-group">
+                <input type="checkbox" ng-model="terms.geography.centralAmerica"><label>Central America + Carribean</label>
             </div>
-            <div class="radio-group">
-                <input type="checkbox" ng-model="mySearch.geography.southAmerica"><label>South America</label>
+            <div class="checkbox-group">
+                <input type="checkbox" ng-model="terms.geography.southAmerica"><label>South America</label>
             </div>
-            <div class="radio-group">
-                <input type="checkbox" ng-model="mySearch.geography.europe"><label>Europe</label>
+            <div class="checkbox-group">
+                <input type="checkbox" ng-model="terms.geography.europe"><label>Europe</label>
             </div>
-            <div class="radio-group">
-                <input type="checkbox" ng-model="mySearch.geography.africa"><label>Africa</label>
+            <div class="checkbox-group">
+                <input type="checkbox" ng-model="terms.geography.africa"><label>Africa</label>
             </div>
-            <div class="radio-group">
-                <input type="checkbox" ng-model="mySearch.geography.asia"><label>Asia</label>
+            <div class="checkbox-group">
+                <input type="checkbox" ng-model="terms.geography.asia"><label>Asia</label>
             </div>
-            <div class="radio-group">
-                <input type="checkbox" ng-model="mySearch.geography.australia"><label>Australia + Pacific</label>
+            <div class="checkbox-group">
+                <input type="checkbox" ng-model="terms.geography.australia"><label>Australia + Pacific</label>
             </div>
         </div>
 
         <div class="col-sm-3 search activities">
             <div class="radio-group">
-                <input type="radio" ng-model="mySearch.activity" value="Nightlife"><label>Nightlife</label>
+                <input type="radio" ng-model="terms.activities" value="Nightlife"><label>Nightlife</label>
             </div>
             <div class="radio-group">
-                <input type="radio" ng-model="mySearch.activity" value="Nature"><label>Nature + Wildlife</label>
+                <input type="radio" ng-model="terms.activities" value="Nature"><label>Nature + Wildlife</label>
             </div>
         </div>
 
         <div class="col-sm-3 search attributes">
             <div class="dropdown-group">
                 <label>Major Language</label>
-                <select name="language" ng-model="mySearch.language">
+                <select name="language" ng-model="terms.language">
                     <option value="English">English</option>
                     <option value="Spanish">Spanish</option>
                     <option value="French">French</option>
@@ -49,7 +49,7 @@
             </div>
             <div class="dropdown-group">
                 <label>Price Range</label>
-                <select name="price" ng-model="mySearch.price">
+                <select name="price" ng-model="terms.price">
                     <option value="Budget">Budget-friendly</option>
                     <option value="Moderate">Moderate</option>
                     <option value="Luxury">Luxury</option>
@@ -57,7 +57,7 @@
             </div>    
             <div class="dropdown-group">
                 <label>City Size</label>
-                <select name="size" ng-model="mySearch.size">
+                <select name="size" ng-model="terms.size">
                     <option value="Rural">Rural or Small Town</option>
                     <option value="Small City">Small City</option>
                     <option value="Major City">Major City</option>
@@ -65,7 +65,7 @@
             </div>   
             <div class="dropdown-group">
                 <label>Terrain / Climate</label>
-                <select name="terrain" ng-model="mySearch.climate">
+                <select name="terrain" ng-model="terms.climate">
                     <option value="Desert">Desert</option>
                     <option value="Mountains">Mountains</option>
                     <option value="Coast">On the coast</option>

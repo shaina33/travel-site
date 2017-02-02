@@ -144,7 +144,7 @@ label {
     position: absolute;
     top: 2px;
     left: 2px;
-    padding-top: 5vh;
+/*    padding-top: 5vh;*/
     background-color: black;
     /* opacity 0.75 when showing */
     border-radius: 8px;
@@ -154,13 +154,11 @@ label {
     justify-content: center;
 /*    display: table;*/
 }
-/*
 .photo-text {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
-*/
 
 .no-show {
     opacity: 0;

@@ -24,15 +24,10 @@
             Other</li>
     </ul>
     <div id="dataHolder">
-        <div class="item {{category}}"><h3><a href="{{webLink}}">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
-        <div class="item cat-trans"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
-        <div class="item cat2"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
-        <div class="item cat1"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
-        <div class="item cat1"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
-        <div class="item cat2"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
-        <div class="item cat3"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
-        <div class="item cat1"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
-        <div class="item cat3"><h3><a href="">{{itemTitle}}</a></h3><p>{{itemDescr}}</p></div>
+        <div ng-repeat="resource in resources|orderBy: 'itemTitle' " class="item {{resource.category}}">
+            <h3><a href="{{resource.webLink}}">{{resource.itemTitle}}</a></h3>
+            <p>{{resource.itemDescr}}</p>
+        </div>
     </div>
     <ng-include src="'/templates/footer-white.html'"></ng-include>
 </div>

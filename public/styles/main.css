@@ -5,6 +5,10 @@
 
 /* General */
 
+.row {
+  padding: 0;
+  margin: 0;
+}
 .navbar-nav {
     width: 90%;
 }
@@ -44,35 +48,28 @@ h1 {
 /*---------------------------------------------*/
 
 /* Landing Page */
-/* use different photo! */
-.landing-cover-image img {
-    position: relative;
-    width: 100%;
-    max-width: 1500px;
+#landing-container {
+  max-width: 1500px;
 }
-.landing-cover-image {
-    padding: 0;
+.headbar {
+  background-color: darkblue;
+  height: 70px;
 }
-.landing-section {
-    border-top: 2px solid tan;
-    height: 400px;
+.hero {
+  background-color: grey;
+  height: calc(100vh - 70px);
 }
-.landing-text {
-    background-color: #6CB9F5;
-    height: 100%;
+.all-points {
+  background-color: lightgreen;
 }
-.landing-pic {
-    background-color: gray;
-    height: 100%;
+.point {
+  height: 250px;
+  border: 1px solid black;
 }
-.image-hold {
-    background-color: gray;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    position: relative;
-    margin: auto;
-    top: 125px;
+@media (min-width: 992px) { /* medium width+ */
+  .point {
+    height: calc((100vh - 70px) / 3);
+  }
 }
 
 /*---------------------------------------------*/

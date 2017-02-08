@@ -1,26 +1,26 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
 <div class="container-fluid resources-container" ng-controller="ResourcesController">
-    <h1>Travel Resources</h1>
+    <h1 class="fancy-font">Travel Resources</h1>
     
     <ul id="filterOptions">
        <!-- category must be listed as 2nd class on filter -->
         <li class="filter all active first" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/books-white-filled-100px.png"/>
+            <img class="resource-icon" src="/assets/icons/books-white-filled-100px.png"/>
             All</li>
         <li class="filter cat-activ" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/map-white-filled-100px.png"/>
+            <img class="resource-icon" src="/assets/icons/map-white-filled-100px.png"/>
             Activities</li>
         <li class="filter cat-trans" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/airplane-white-filled-100px.png"/>
+            <img class="resource-icon" src="/assets/icons/airplane-white-filled-100px.png"/>
             Transportation</li>
         <li class="filter cat-lodg" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/bed-white-filled-100px.png"/>
+            <img class="resource-icon" src="/assets/icons/bed-white-filled-100px.png"/>
             Lodging</li>
         <li class="filter cat-inv" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/volunteer-white-filled-100px.png"/>
+            <img class="resource-icon" src="/assets/icons/volunteer-white-filled-100px.png"/>
             Get Involved</li>
         <li class="filter cat-other" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/medical-white-filled-100px.png"/>
+            <img class="resource-icon" src="/assets/icons/medical-white-filled-100px.png"/>
             Other</li>
     </ul>
     <div id="dataHolder">

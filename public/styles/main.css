@@ -156,9 +156,11 @@ h1 {
 .dropdown-group {
     display: block;
 }
+/*
 label {
     margin-left: 4px;
 }
+*/
 .dest-info  {
     color: black;
 }

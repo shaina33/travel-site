@@ -1,101 +1,68 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
 
 <div ng-controller="SearchController" id="search-container" class="container-fluid">
-    <h1 class="fancy-font">Search Page</h1>
+
+<h1 class="fancy-font">Find your next destination</h1>
     
-    <div id="form-control">
-        <div class="col-sm-3 search geography">
-            <div class="radio-group">
-                <input type="checkbox" ng-model="terms.geography.northAmerica"><label>North America</label>
-            </div>
-            <div class="checkbox-group">
-                <input type="checkbox" ng-model="terms.geography.centralAmerica"><label>Central America + Carribean</label>
-            </div>
-            <div class="checkbox-group">
-                <input type="checkbox" ng-model="terms.geography.southAmerica"><label>South America</label>
-            </div>
-            <div class="checkbox-group">
-                <input type="checkbox" ng-model="terms.geography.europe"><label>Europe</label>
-            </div>
-            <div class="checkbox-group">
-                <input type="checkbox" ng-model="terms.geography.africa"><label>Africa</label>
-            </div>
-            <div class="checkbox-group">
-                <input type="checkbox" ng-model="terms.geography.asia"><label>Asia</label>
-            </div>
-            <div class="checkbox-group">
-                <input type="checkbox" ng-model="terms.geography.australia"><label>Australia + Pacific</label>
-            </div>
+<!-- Search Form -->
+<div id="form-control">
+    <div class="row">
+        <div class="col-sm-4">
+            <h4>Major languages spoken...</h4>
+            <label><input type="checkbox" ng-true-value="'English'" ng-false-value="" ng-model="checkbox['English']" ng-change="checkboxChange_Lang('English')"> English</label><br/>
+            <label><input type="checkbox" ng-true-value="'Spanish'" ng-false-value="" ng-model="checkbox['Spanish']" ng-change="checkboxChange_Lang('Spanish')"> Spanish</label><br/>
+            <label><input type="checkbox" ng-true-value="'French'" ng-false-value="" ng-model="checkbox['French']" ng-change="checkboxChange_Lang('French')"> French</label><br/>
+            <label><input type="checkbox" ng-true-value="'Arabic'" ng-false-value="" ng-model="checkbox['Arabic']" ng-change="checkboxChange_Lang('Arabic')"> Arabic</label><br/>
+            
+            <h4>Price range...</h4>
+            <label><input type="checkbox" ng-true-value="'Budget'" ng-false-value="" ng-model="checkbox['Budget']" ng-change="checkboxChange_Price('Budget')"> Budget</label><br/>
+            <label><input type="checkbox" ng-true-value="'Moderate'" ng-false-value="" ng-model="checkbox['Moderate']" ng-change="checkboxChange_Price('Moderate')"> Moderate</label><br/>
+            <label><input type="checkbox" ng-true-value="'Luxury'" ng-false-value="" ng-model="checkbox['Luxury']" ng-change="checkboxChange_Price('Luxury')"> Luxury</label><br/>
         </div>
-
-        <div class="col-sm-3 search activities">
-            <div class="radio-group">
-                <input type="radio" ng-model="terms.activities" value="Nightlife"><label>Nightlife</label>
-            </div>
-            <div class="radio-group">
-                <input type="radio" ng-model="terms.activities" value="Nature"><label>Nature + Wildlife</label>
-            </div>
+        <div class="col-sm-4">
+            <h4>I can travel to...</h4>
+            <label><input type="checkbox" ng-true-value="'North America'" ng-false-value="" ng-model="checkbox['North America']" ng-change="checkboxChange_Reg('North America')"> North America</label><br/>
+            <label><input type="checkbox" ng-true-value="'Central America + Caribbean'" ng-false-value="" ng-model="checkbox['Central America + Caribbean']" ng-change="checkboxChange_Reg('Central America + Caribbean')"> Central America + Caribbean</label><br/>
+            <label><input type="checkbox" ng-true-value="'South America'" ng-false-value="" ng-model="checkbox['South America']" ng-change="checkboxChange_Reg('South America')"> South America</label><br/>
+            <label><input type="checkbox" ng-true-value="'Europe'" ng-false-value="" ng-model="checkbox['Europe']" ng-change="checkboxChange_Reg('Europe')"> Europe</label><br/>
+            <label><input type="checkbox" ng-true-value="'Africa'" ng-false-value="" ng-model="checkbox['Africa']" ng-change="checkboxChange_Reg('Africa')"> Africa</label><br/>
+            <label><input type="checkbox" ng-true-value="'Asia'" ng-false-value="" ng-model="checkbox['Asia']" ng-change="checkboxChange_Reg('Asia')"> Asia</label><br/>
+            <label><input type="checkbox" ng-true-value="'Australia + Pacific'" ng-false-value="" ng-model="checkbox['Australia + Pacific']" ng-change="checkboxChange_Reg('Australia + Pacific')"> Australia + Pacific</label><br/>
         </div>
-
-        <div class="col-sm-3 search attributes">
-            <div class="dropdown-group">
-                <label>Major Language</label>
-                <select name="language" ng-model="terms.language">
-                    <option value="English">English</option>
-                    <option value="Spanish">Spanish</option>
-                    <option value="French">French</option>
-                    <option value="Arabic">Arabic</option>
-                </select>
-            </div>
-            <div class="dropdown-group">
-                <label>Price Range</label>
-                <select name="price" ng-model="terms.price">
-                    <option value="Budget">Budget-friendly</option>
-                    <option value="Moderate">Moderate</option>
-                    <option value="Luxury">Luxury</option>
-                </select>
-            </div>    
-            <div class="dropdown-group">
-                <label>City Size</label>
-                <select name="size" ng-model="terms.size">
-                    <option value="Rural">Rural or Small Town</option>
-                    <option value="Small City">Small City</option>
-                    <option value="Major City">Major City</option>
-                </select>
-            </div>   
-            <div class="dropdown-group">
-                <label>Terrain / Climate</label>
-                <select name="terrain" ng-model="terms.climate">
-                    <option value="Desert">Desert</option>
-                    <option value="Mountains">Mountains</option>
-                    <option value="Coast">On the coast</option>
-                    <option value="Rainforest">Rainforest</option>
-                    <option value="Temperate">Temperate</option>
-                </select>
-            </div>  
-        </div>
-
-        <div class="col-sm-3 search-button">
-            <button type="button" ng-click="search()">Search</button>
-            <button type="button" ng-click="reset()">Clear all selections</button>
+        <div class="col-sm-4">
+            <h4>Sparks...</h4>
+            <label><input type="checkbox" ng-true-value="'Nature + Wildlife'" ng-false-value="" ng-model="checkbox['Nature + Wildlife']" ng-change="checkboxChange_Spark('Nature + Wildlife')"> Nature + Wildlife</label><br/>
         </div>
     </div>
+    <div class="row search-button">
+        <button type="button" ng-click="search()">Search</button>
+        <button type="button" ng-click="reset()">Clear all selections</button>
+    </div>
+<!--
+    Language Array: {{languageArray}}<br/>
+    Price Array: {{priceArray}}<br/>
+    Region Array: {{regionArray}}<br/>
+    SparkArray: {{sparkArray}}
+-->
+</div>
    
-    <div class="col-xs-12 search-results">
-        <div ng-show="showResults">
-            <p>My search terms are: {{ mySearch }}</p>
-            <p>My results are:</p>
-            <div ng-repeat="result in results">
-                <div class="item">
-                   <div class="dest-info">
-                        <h3>{{ result.city }}, {{ result.country }}</h3>
-                        <p>Language: {{ result.language }}</p>
-                        <p>Terrain: {{ result.terrain }}</p>
-                    </div>
+<!-- Search Results -->    
+<div class="col-xs-12 search-results">
+    <div ng-show="showResults">
+        <p>mySearch query: {{ mySearch }}</p>
+        <div ng-repeat="result in results">
+            <div class="item">
+                <div class="dest-info">
+                    <h3>{{ result.city }}, {{ result.country }}</h3>
+                    <p>Language: {{ result.language }}</p>
+                    <p>Price Range: {{ result.price }}</p>
+                    <p>Region: {{ result.region }}</p>
+                    <p>Sparks: {{ result.spark }}</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
     <ng-include class="col-xs-12" src="'/templates/footer-black.html'"></ng-include>
 

@@ -5,49 +5,92 @@
             $scope.terms = $localStorage.savedTerms;
         }
         
+        // Initialize an array for each search topic
+        $scope.languageArray = [];
+        $scope.priceArray = [];
+        $scope.regionArray = [];
+        $scope.sparkArray = [];
+
+        // a checkboxChange function for each search topic
+        // use closure to generate specifics from general function?
+        $scope.checkboxChange_Lang = function(value) {
+            if ($scope.checkbox[value]) {
+                $scope.languageArray.push($scope.checkbox[value]);
+            } else {
+                var index = $scope.languageArray.indexOf(value);
+                if (index > -1) {
+                    $scope.languageArray.splice(index, 1);
+                }
+            }
+        }            
+        $scope.checkboxChange_Price = function(value) {
+            if ($scope.checkbox[value]) {
+                $scope.priceArray.push($scope.checkbox[value]);
+            } else {
+                var index = $scope.priceArray.indexOf(value);
+                if (index > -1) {
+                    $scope.priceArray.splice(index, 1);
+                }
+            }
+        }            
+        $scope.checkboxChange_Reg = function(value) {
+            if ($scope.checkbox[value]) {
+                $scope.regionArray.push($scope.checkbox[value]);
+            } else {
+                var index = $scope.regionArray.indexOf(value);
+                if (index > -1) {
+                    $scope.regionArray.splice(index, 1);
+                }
+            }
+        }            
+        $scope.checkboxChange_Spark = function(value) {
+            if ($scope.checkbox[value]) {
+                $scope.sparkArray.push($scope.checkbox[value]);
+            } else {
+                var index = $scope.sparkArray.indexOf(value);
+                if (index > -1) {
+                    $scope.sparkArray.splice(index, 1);
+                }
+            }
+        }  
+        
+        // use arrays to build mySearch object for querying
+        // use closure to generate specifics from general function?
+        $scope.buildMySearch = function() {
+            $scope.mySearch = {};
+            if ($scope.languageArray.length > 0) {
+                $scope.mySearch.language = {"$elemMatch": {
+                    "$in": $scope.languageArray
+                }}
+            }
+            if ($scope.priceArray.length > 0) {
+                $scope.mySearch.price = {"$elemMatch": {
+                    "$in": $scope.priceArray
+                }}
+            }
+            if ($scope.regionArray.length > 0) {
+                $scope.mySearch.region = {"$elemMatch": {
+                    "$in": $scope.regionArray
+                }}
+            }
+            if ($scope.sparkArray.length > 0) {
+                $scope.mySearch.spark = {"$elemMatch": {
+                    "$in": $scope.sparkArray
+                }}
+            }    
+        }
+        
+        // when Submit button is pressed
         $scope.search = function() {
             $scope.results = [];
             $scope.showResults = false;
-            if ($scope.terms !== undefined) {
-                
-                // save user's selections
-                $localStorage.savedTerms = $scope.terms;
-                
-                // process search terms into mySearch query
-                $scope.mySearch = {}
-                $scope.prepGeo = function() {
-                    $scope.mySearch.geography = []
-                    if ($scope.terms.geography.northAmerica) {
-                        $scope.mySearch.geography.push("North America")
-                    }
-                    if ($scope.terms.geography.centralAmerica) {
-                        $scope.mySearch.geography.push("Central America")
-                    }
-                    if ($scope.terms.geography.southAmerica) {
-                        $scope.mySearch.geography.push("South America")
-                    }
-                    if ($scope.terms.geography.europe) {
-                        $scope.mySearch.geography.push("Europe")
-                    }
-                    if ($scope.terms.geography.africa) {
-                        $scope.mySearch.geography.push("Africa")
-                    }
-                    if ($scope.terms.geography.asia) {
-                        $scope.mySearch.geography.push("Asia")
-                    }
-                    if ($scope.terms.geography.australia) {
-                        $scope.mySearch.geography.push("Australia")
-                    }
-                    return {$in: $scope.mySearch.geography};
-                    
-                };
-                $scope.mySearch.geography = $scope.prepGeo();
-                $scope.mySearch.activities = $scope.terms.activities;
-                $scope.mySearch.language = $scope.terms.language;
-                $scope.mySearch.price = $scope.terms.price;
-                $scope.mySearch.size = $scope.terms.size;
-                $scope.mySearch.climate = $scope.terms.climate;
-                
+//            if ($scope.terms !== undefined) {
+//                // save user's selections
+//                $localStorage.savedTerms = $scope.terms;
+//                
+                // build mySearch query
+                $scope.buildMySearch();
+            
                 // send mySearch query to database
                 $http.post('/search', $scope.mySearch)
                      .then(
@@ -60,9 +103,9 @@
                             console.log(error);
                         }
                      )
-            } else {
-                console.log('search undefined');
-            }
+//            } else {
+//                console.log('search undefined');
+//            }
         }
         
         $scope.reset = function() {

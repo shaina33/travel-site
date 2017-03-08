@@ -148,21 +148,31 @@ h1 {
 
 /* Search Page */
 /* see .item from Resources section */
-#search-container {
-    background-color: lightblue;
+#search-form label {
+    color: #EF7351;
+}
+#search-form h4 {
+    color: #55134E;
+    text-decoration: underline;
 }
 .radio-group
 .checkbox-group
 .dropdown-group {
     display: block;
 }
-/*
-label {
-    margin-left: 4px;
-}
-*/
 .dest-info  {
     color: black;
+}
+.search-buttons-row {
+    display: flex;
+    justify-content: center;
+}
+.search-button {
+    background-color: #EF7351;
+    border: none;
+    color: #55134E;
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
 }
 
 /*---------------------------------------------*/

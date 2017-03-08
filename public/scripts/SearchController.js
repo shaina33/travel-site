@@ -59,24 +59,28 @@
         $scope.buildMySearch = function() {
             $scope.mySearch = {};
             if ($scope.languageArray.length > 0) {
-                $scope.mySearch.language = {"$elemMatch": {
-                    "$in": $scope.languageArray
-                }}
+                if ($scope.languageSurprise) {
+                    $scope.languageArray = null;
+                } else {
+                    $scope.mySearch.language = {"$elemMatch": {
+                        "$in": $scope.languageArray
+                    }};
+                }
             }
             if ($scope.priceArray.length > 0) {
-                $scope.mySearch.price = {"$elemMatch": {
+                $scope.mySearch.price = {
                     "$in": $scope.priceArray
-                }}
+                };
             }
             if ($scope.regionArray.length > 0) {
-                $scope.mySearch.region = {"$elemMatch": {
+                $scope.mySearch.region = {
                     "$in": $scope.regionArray
-                }}
+                };
             }
             if ($scope.sparkArray.length > 0) {
                 $scope.mySearch.spark = {"$elemMatch": {
                     "$in": $scope.sparkArray
-                }}
+                }};
             }    
         }
         
@@ -84,6 +88,7 @@
         $scope.search = function() {
             $scope.results = [];
             $scope.showResults = false;
+            $scope.showNoResults = false;
 //            if ($scope.terms !== undefined) {
 //                // save user's selections
 //                $localStorage.savedTerms = $scope.terms;
@@ -97,8 +102,12 @@
                         function(response) {
                             console.log('mySearch: ', $scope.mySearch);
                             $scope.results = response.data;
-                            console.log($scope.results);
-                            $scope.showResults = true;
+                            console.log('results: ', $scope.results);
+                            if ($scope.results.length < 1) {
+                                $scope.showNoResults = true;
+                            } else {
+                                $scope.showResults = true;
+                            }
                         }, function(error) {
                             console.log(error);
                         }
@@ -113,6 +122,7 @@
             $scope.mySearch = {};
             $localStorage.savedTerms = {};
             $scope.showResults = false;
+            $scope.showNoResults = false;
         }
     }
 

@@ -64,13 +64,13 @@
         "id": "dae306c0.b9a698",
         "type": "change",
         "z": "7b2a9965.03ad18",
-        "name": "Limit: 10",
+        "name": "Limit: 40",
         "rules": [
             {
                 "t": "set",
                 "p": "limit",
                 "pt": "msg",
-                "to": "10",
+                "to": "40",
                 "tot": "num"
             },
             {

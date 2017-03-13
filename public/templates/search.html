@@ -2,12 +2,12 @@
 
 <div ng-controller="SearchController" id="search-container" class="container-fluid">
 
-<h1 class="fancy-font orange-header">Find your next destination</h1>
+<h1 class="fancy-font orange-background">Find your next destination</h1>
     
 <!-- Search Form -->
 <div id="search-form">
     <div class="row">
-        <div class="col-sm-4">
+        <div class="search-column col-sm-4">
             <h4>Major language spoken:</h4>
             <label><input type="checkbox" ng-true-value="'English'" ng-false-value="" ng-model="checkbox['English']" ng-change="checkboxChange_Lang('English')"> English</label><br/>
             <label><input type="checkbox" ng-true-value="'Spanish'" ng-false-value="" ng-model="checkbox['Spanish']" ng-change="checkboxChange_Lang('Spanish')"> Spanish</label><br/>
@@ -20,9 +20,9 @@
             <h4>Price range:</h4>
             <label><input type="checkbox" ng-true-value="'Budget'" ng-false-value="" ng-model="checkbox['Budget']" ng-change="checkboxChange_Price('Budget')"> Budget</label><br/>
             <label><input type="checkbox" ng-true-value="'Moderate'" ng-false-value="" ng-model="checkbox['Moderate']" ng-change="checkboxChange_Price('Moderate')"> Moderate</label><br/>
-            <label><input type="checkbox" ng-true-value="'Luxury'" ng-false-value="" ng-model="checkbox['Luxury']" ng-change="checkboxChange_Price('Luxury')"> Luxury</label><br/>
+            <label><input type="checkbox" ng-true-value="'Splurge'" ng-false-value="" ng-model="checkbox['Splurge']" ng-change="checkboxChange_Price('Splurge')"> Splurge</label><br/>
         </div>
-        <div class="col-sm-4">
+        <div class="search-column col-sm-4">
             <h4>Regions:</h4>
             <label><input type="checkbox" ng-true-value="'North America'" ng-false-value="" ng-model="checkbox['North America']" ng-change="checkboxChange_Reg('North America')"> North America</label><br/>
             <label><input type="checkbox" ng-true-value="'Central America + Caribbean'" ng-false-value="" ng-model="checkbox['Central America + Caribbean']" ng-change="checkboxChange_Reg('Central America + Caribbean')"> Central America + Caribbean</label><br/>
@@ -32,7 +32,7 @@
             <label><input type="checkbox" ng-true-value="'Asia'" ng-false-value="" ng-model="checkbox['Asia']" ng-change="checkboxChange_Reg('Asia')"> Asia</label><br/>
             <label><input type="checkbox" ng-true-value="'Australia + Pacific'" ng-false-value="" ng-model="checkbox['Australia + Pacific']" ng-change="checkboxChange_Reg('Australia + Pacific')"> Australia + Pacific</label><br/>
         </div>
-        <div class="col-sm-4">
+        <div class="search-column col-sm-4">
             <h4>My Sparks:</h4>
             <label><input type="checkbox" ng-true-value="'Nature + Wildlife'" ng-false-value="" ng-model="checkbox['Nature + Wildlife']" ng-change="checkboxChange_Spark('Nature + Wildlife')"> Nature + Wildlife</label><br/>
             <label><input type="checkbox" ng-true-value="'Nightlife'" ng-false-value="" ng-model="checkbox['Nightlife']" ng-change="checkboxChange_Spark('Nightlife')"> Nightlife</label><br/>
@@ -52,23 +52,21 @@
 </div>
    
 <!-- Search Results -->    
-<div class="col-xs-12 search-results">
-    <div ng-show="showResults">
-        <div ng-repeat="result in results">
-            <div class="item">
-                <div class="dest-info">
-                    <h3>{{ result.location }}, {{ result.country }}</h3>
-                    <p>Language: {{ result.language }}</p>
-                    <p>Price Range: {{ result.price }}</p>
-                    <p>Region: {{ result.region }}</p>
-                    <p>Sparks: {{ result.spark }}</p>
-                </div>
-            </div>
+<div ng-show="showResults" class="search-results">
+    <div ng-repeat="result in results" class="search-item">
+        <div class="dest-info">
+            <h3>{{ result.location }}, {{ result.country }}</h3>
+            <p><span>Region:</span> {{ result.region }}</p>
+            <p><span>Languages:</span> {{ result.languageText }}</p>
+            <p><span>Price Range:</span> {{ result.price }}</p>
+            <p><span>Sparks:</span> {{ result.sparkText }}</p>
         </div>
     </div>
-    <div ng-show="showNoResults">No results found. Please adjust your search terms.</div>
+</div>
+<div ng-show="showNoResults" class="no-search-results">
+    No results found. Please adjust your search terms.
 </div>
 
-    <ng-include class="col-xs-12" src="'/templates/footer-black.html'"></ng-include>
+<ng-include src="'/templates/footer.html'" class="footer-black"></ng-include>
 
-</div>
+</div> <!-- close search controller & container -->

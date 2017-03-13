@@ -10,7 +10,7 @@
                 <div class="photo-info no-show" style="height: {{height}}; width: {{width}}">\
                     <div class="photo-text">\
                         <p>{{location}}</p>\
-                        <p><span><3</span> {{likes}} likes</p>\
+                        <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> {{likes}} likes</p>\
                         <a href="{{link}}">View on Instagram</a>\
                     </div>\
                 </div>\
@@ -19,7 +19,7 @@
             get: 'user',
             userId: '23947096', //@natgeotravel
             clientId: $scope.clientID_IF,
-            limit: 8,
+            limit: 12,
             accessToken: $scope.accessToken_IF,
             error: function(message) {
                 console.log(message);
@@ -33,7 +33,7 @@
             get: 'user',
             userId: '594916843', //@exploringtheglobe
             clientId: $scope.clientID_IF,
-            limit: 8,
+            limit: 12,
             accessToken: $scope.accessToken_IF,
             error: function(message) {
                 console.log(message);

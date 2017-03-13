@@ -64,7 +64,7 @@
         "id": "dae306c0.b9a698",
         "type": "change",
         "z": "7b2a9965.03ad18",
-        "name": "Limit: 10",
+        "name": "Limit: 40",
         "rules": [
             {
                 "t": "set",
@@ -296,7 +296,7 @@
         "fieldType": "msg",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "This is the payload: {{unescape(payload)}} !",
+        "template": "This is the payload: {{payload[1]}} !",
         "x": 684.5,
         "y": 519,
         "wires": [

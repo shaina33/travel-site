@@ -12,6 +12,7 @@
         $scope.sparkArray = [];
 
         // a checkboxChange function for each search topic
+        // these functions edit the arrays based on user input
         // use closure to generate specifics from general function?
         $scope.checkboxChange_Lang = function(value) {
             if ($scope.checkbox[value]) {
@@ -84,6 +85,14 @@
             }    
         }
         
+        // prepare search results for display
+        $scope.processSearchResults = function() {
+            $scope.results.forEach( function(destination) {
+                destination.languageText = destination.language.join(', ');
+                destination.sparkText = destination.spark.join(', ');
+            });
+        }
+        
         // when Submit button is pressed
         $scope.search = function() {
             $scope.results = [];
@@ -102,10 +111,13 @@
                         function(response) {
                             console.log('mySearch: ', $scope.mySearch);
                             $scope.results = response.data;
+                            console.log('# results: ', $scope.results.length);
                             console.log('results: ', $scope.results);
                             if ($scope.results.length < 1) {
                                 $scope.showNoResults = true;
+                                console.log($scope.showNoResults);
                             } else {
+                                $scope.processSearchResults();
                                 $scope.showResults = true;
                             }
                         }, function(error) {

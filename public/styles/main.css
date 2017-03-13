@@ -1,22 +1,22 @@
 /*  Additional CSS:
     Normalize.css
-    Bootstrap
+    Bootstrap - breakpoints at xs/768-sm/992-md/1200-lg
 */
 
 /*  Color Palette:
     Orange: #EF7351
     Purple: #55134E
     White: white
+    Black: black
 */
 
 /* General */
 
-/*
+
 body {
-    max-width: 1500px;
-    margin: auto;
+    background-color: #55134E;
 }
-*/
+
 .navbar-default {
     max-width: 1500px;
     margin: auto;
@@ -47,30 +47,23 @@ body {
     font-size: 3.5rem;
     padding-left: 20px;
 }
-/*
-.navbar-nav {
-    width: 90%;
-}
-*/
-/*
-.nav li {
-    width: 25%;
-    border-left: 1px solid #55134E;
-    text-align: center;
-}
-*/
 
 h1 {
-    font-size: 6rem;
-    padding-top: 80px; /* avoid overlap with navbar */
-    padding-bottom: 4vw;
+    font-size: calc(3rem + 3vw);
+    padding-top: calc(50px + 2vw);
+    padding-bottom: 2vw;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
     color: #55134E;
+    margin: 0px;
 }
 
 .footer {
     text-align: center;
-    padding: 5px;
+/*    padding: 5px;*/
+    height: 30px;
+    line-height: 30px;
 }
 .footer a {
     text-decoration: underline;
@@ -78,10 +71,16 @@ h1 {
 .footer p {
     margin-bottom: 0;
 }
-.white {
+.footer-white {
     color: white;
 }
-.black {
+.footer-white a {
+    color: white;
+}
+.footer-black {
+    color: black;
+}
+.footer-black a {
     color: black;
 }
 .italic {
@@ -90,7 +89,7 @@ h1 {
 .fancy-font {
     font-family: 'Emilys Candy', cursive;
 }
-.orange-header {
+.orange-background {
     background-color: #EF7351;
 }
 
@@ -99,6 +98,7 @@ h1 {
 /* Landing Page */
 #landing-container {
     max-width: 1500px;
+    margin: auto;
 }
 .headbar {
     background-color: #EF7351;
@@ -109,7 +109,7 @@ h1 {
     font-size: 50px;
 }
 .hero {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 70px - 250px - 30px);
     background: url('/assets/photos/morocco-cactus.jpg') no-repeat right;
     background-size: cover;
     
@@ -133,35 +133,46 @@ h1 {
     height: 250px;
     text-align: center;
 }
-@media (min-width: 768px) and (max-width: 991px) {
-    .hero {
-        height: calc(100vh - 70px - 250px);
+@media (max-width: 768px) {
+    .point {
+        height: 200px;
     }
 }
-@media (min-width: 992px) { /* medium width+ */
+@media (min-width: 1200px) { /* large width+ */
+    .hero {
+        height: calc(100vh - 70px - 30px);
+    }
     .point {
-        height: calc((100vh - 70px) / 3);
+        height: calc((100vh - 70px - 30px) / 3);
     }
 }
 
 /*---------------------------------------------*/
 
 /* Search Page */
-/* see .item from Resources section */
+#search-container {
+    max-width: 1500px;
+    margin: auto;
+    background-color: white;
+}
+#search-form {
+    max-width: 1000px;
+    margin: auto;
+}
 #search-form label {
-    color: #EF7351;
+    color: #55134E;
 }
 #search-form h4 {
-    color: #55134E;
+    color: #EF7351;
     text-decoration: underline;
+}
+.search-column {
+    padding-left: 5vw;
 }
 .radio-group
 .checkbox-group
 .dropdown-group {
     display: block;
-}
-.dest-info  {
-    color: black;
 }
 .search-buttons-row {
     display: flex;
@@ -174,6 +185,36 @@ h1 {
     padding: 5px 10px 5px 10px;
     margin: 10px;
 }
+.search-results {
+    text-align: center;
+}
+.search-item {
+    border: 5px solid #EF7351;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 20px;
+    height: 23rem;
+    width: 85vw;
+    max-width: 45rem;
+    display: inline-block;
+    text-align: left;
+    box-sizing: border-box;
+}
+.dest-info h3  {
+    color: #EF7351;
+}
+.dest-info p {
+    color: #55134E;
+}
+.dest-info span {
+    font-weight: bold;
+}
+.no-search-results {
+	text-align: center;
+    color: #EF7351;
+    padding: 20px 0 20px 0;
+    font-size: 2rem;
+}
 
 /*---------------------------------------------*/
 
@@ -181,6 +222,14 @@ h1 {
 
 #inspiration-wrapper {
     background-color: #EF7351;
+    max-width: 1500px;
+    margin: auto;
+}
+#inspiration-wrapper h3 {
+	text-align: center;
+    color: #55134E;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 .instafeed-wrapper {
     margin-bottom: 2vw;
@@ -225,7 +274,6 @@ h1 {
     position: absolute;
     top: 2px;
     left: 2px;
-/*    padding-top: 5vh;*/
     background-color: black;
     /* opacity 0.75 when showing */
     border-radius: 8px;
@@ -233,7 +281,6 @@ h1 {
     text-align: center;
     flex-direction: column;
     justify-content: center;
-/*    display: table;*/
 }
 .photo-text {
     position: relative;
@@ -257,6 +304,8 @@ h1 {
     background: url('/assets/photos/tunnel-beach.jpg') no-repeat center fixed;
     background-size: cover;
     background-clip: padding-box;
+    max-width: 1500px;
+    margin: auto;
 }
 
 #filterOptions {
@@ -272,14 +321,14 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    height: calc(2.5rem + 8vw); /* 10vw */
-    width: calc(2.5rem + 8vw);
+    height: 10rem;
+    width: 10rem;
     border-radius: 10px;
     margin-left: 5vw;
     margin-bottom: 5vw;
     overflow: hidden;
     position: relative;
-    font-size: calc(0.5rem + 1vw); /* need to adjust for big & small screens! */
+    font-size: 1.5rem;
     color: white;
 }
 .filter.active {
@@ -288,16 +337,16 @@ h1 {
 }
 .filter:hover {
     text-decoration: underline;
-    color: #EF7351;
 }
 .filter:first-child {
     margin-left: 0;
 }
 .resource-icon {
-    height: calc(1rem + 8vw);
+    height: 8rem;
+    max-height: 122px;
     position: absolute;
     z-index: 2;
-    padding-bottom: 3vw;
+    padding-bottom: 3rem;
 }
 
 #dataHolder {

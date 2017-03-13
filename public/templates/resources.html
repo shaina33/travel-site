@@ -1,8 +1,8 @@
 <ng-include src="'/templates/navbar.html'"></ng-include>
 <div class="container-fluid resources-container" ng-controller="ResourcesController">
-    <h1 class="fancy-font">Travel Resources</h1>
+    <h1 class="fancy-font">Plan your trip</h1>
     
-    <ul id="filterOptions">
+    <ul id="filterOptions" class="row">
        <!-- category must be listed as 2nd class on filter -->
         <li class="filter all active first" ng-click="filterClicked($event)">
             <img class="resource-icon" src="/assets/icons/books-white-filled-100px.png"/>
@@ -29,6 +29,6 @@
             <p>{{resource.itemDescr}}</p>
         </div>
     </div>
-    <ng-include src="'/templates/footer-white.html'"></ng-include>
+    <ng-include src="'/templates/footer.html'" class="footer-white"></ng-include>
 </div>
 

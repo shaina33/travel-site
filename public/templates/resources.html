@@ -23,7 +23,7 @@
             <img class="resource-icon" src="/assets/icons/medical-white-filled-100px.png"/>
             Other</li>
     </ul>
-    <div id="dataHolder">
+    <div id="dataHolder" class="row">
         <div ng-repeat="resource in resources|orderBy: 'itemTitle' " class="item {{resource.categories}}">
             <h3><a href="{{resource.webLink}}">{{resource.itemTitle}}</a></h3>
             <p>{{resource.itemDescr}}</p>

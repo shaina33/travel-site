@@ -285,7 +285,7 @@ h1 {
 .photo-background {
     top: 0;
     margin-right: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
@@ -315,7 +315,6 @@ h1 {
 .photo-text a {
     color: #EF7351;
 }
-
 .no-show {
     opacity: 0;
 }
@@ -380,31 +379,39 @@ h1 {
 
 #dataHolder {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* padding ensures background covers bottom with only 2 items */
-/*    padding-bottom: 130px;*/
+    flex-flow: row wrap;
+    justify-content: flex-start;
 }
 .item {
-    width: 70vw;
-    max-width: 1000px;
+    width: 40vw;
+    max-width: 600px;
     border: 1px solid black;
     border-radius: 10px;
-    margin-bottom: 4vw;
+    margin: 0 4vw 4vw 4vw;
     background-color: white;
     opacity: .8;
     overflow: hidden;
 }
+@media (max-width: 992px) {
+    #dataHolder {
+	   justify-content: center;
+    }
+    .item {
+        width: 85vw;
+    }
+}
+.item h3 {
+    border-left: 15px solid white;
+}
 .item h3 a {
-    padding-left: 1vw;
     color: #EF7351;
     opacity: 1;
 }
 .item p {
-    padding-left: 1vw;
+    padding-left: 15px;
+    padding-right: 15px;
     color: #55134E;
 }
 .item a {
     color: black;
 }
-/* need to redefine a::visited behavior? */

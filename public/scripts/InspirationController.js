@@ -1,6 +1,13 @@
 (function() {
     function InspirationCtrl ($scope) {
 
+//        $scope.same = function(height, width) {
+//            $scope.myObject = {
+//                "height" : height,
+//                "width" : width
+//            }
+//        }
+        
         // Set up Instafeeds
         $scope.accessToken_IF = '4006211828.ba4c844.8605619ce58c48a391471eff658fd29b';
         $scope.clientID_IF = 'c6e2fc1923d5407aa5f3d1afc3c43ea9';
@@ -11,7 +18,7 @@
                     <div class="photo-text">\
                         <p>{{location}}</p>\
                         <p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> {{likes}} likes</p>\
-                        <a href="{{link}}">View on Instagram</a>\
+                        <a href="{{link}}"><span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> View on Instagram</a>\
                     </div>\
                 </div>\
              </div>'
@@ -48,15 +55,15 @@
         $scope.instafeed1.run();
         $scope.instafeed2.run();
         
-        // Mouse Hover Interaction on Instafeed photos
+        // Mouse Hover (or Finger Tap) Interaction on Instafeed photos
         $(document).ready(function() {
             $(document).on('mouseover', ".photo-info", function(event) {
-                console.log(event);
+                //console.log(event);
                 $(this).removeClass("no-show");
                 $(this).addClass("show");
             });
             $(document).on('mouseleave', ".photo-info", function(event) {
-                console.log(event);
+                //console.log(event);
                 $(this).removeClass("show");
                 $(this).addClass("no-show");
             })

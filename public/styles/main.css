@@ -34,13 +34,35 @@ body {
     background-color: #EF7351;
     border-color: #55134E; 
 }
+.menu-button {
+    padding: 3px;
+    margin-right: 25px;
+    border: none;
+    height: 35px;
+    width: 35px;
+}
+.menu-icon {
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+    color: #55134E;
+}
 #my-navbar a {
     color: #55134E;
     font-size: 1.5rem;
-    border: 1px solid #EF7351;
+/*    border: 1px solid #EF7351;*/
+    border-left: 1px solid #55134E;
+    border-bottom: 2px solid #EF7351;
+    padding: 2px 0px 2px 15px;
+    margin: 15px 15px 13px 0px;
+}
+#my-navbar li:first-child a {
+	border-left-color: #EF7351;
 }
 #my-navbar a:hover {
-    border: 1px solid #55134E;
+/*    border: 1px solid #55134E;   */
+/*    border-bottom: 2px solid #55134E;*/
+    text-decoration: underline;
 }
 .navbar-brand {
     color: #55134E !important;
@@ -61,12 +83,8 @@ h1 {
 
 .footer {
     text-align: center;
-/*    padding: 5px;*/
     height: 30px;
     line-height: 30px;
-}
-.footer a {
-    text-decoration: underline;
 }
 .footer p {
     margin-bottom: 0;
@@ -110,7 +128,8 @@ h1 {
 }
 .hero {
     height: calc(100vh - 70px - 250px - 30px);
-    background: url('/assets/photos/morocco-cactus.jpg') no-repeat right;
+    min-height: 300px;
+    background: url('/assets/photos/trip-planning.jpg') no-repeat right;
     background-size: cover;
     
 }
@@ -138,12 +157,14 @@ h1 {
         height: 200px;
     }
 }
-@media (min-width: 1200px) { /* large width+ */
+@media (min-width: 1200px) { /* large width */
     .hero {
         height: calc(100vh - 70px - 30px);
+        min-height: 600px;
     }
     .point {
         height: calc((100vh - 70px - 30px) / 3);
+        min-height: 200px;
     }
 }
 
@@ -276,16 +297,23 @@ h1 {
     left: 2px;
     background-color: black;
     /* opacity 0.75 when showing */
-    border-radius: 8px;
+    border-radius: 6px;
     color: white;
     text-align: center;
     flex-direction: column;
     justify-content: center;
+    /* adjust for height discrepancy */
+    box-sizing: content-box;
+    padding-bottom: 2px;
 }
 .photo-text {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    opacity: 1;
+}
+.photo-text a {
+    color: #EF7351;
 }
 
 .no-show {
@@ -306,6 +334,7 @@ h1 {
     background-clip: padding-box;
     max-width: 1500px;
     margin: auto;
+    min-height: 100vh;
 }
 
 #filterOptions {
@@ -354,7 +383,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     /* padding ensures background covers bottom with only 2 items */
-    padding-bottom: 130px;
+/*    padding-bottom: 130px;*/
 }
 .item {
     width: 70vw;

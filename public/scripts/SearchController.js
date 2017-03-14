@@ -1,19 +1,38 @@
 (function() {
     function SearchCtrl ($scope, Fixtures, $http, $localStorage) {
         
-        if ($localStorage.savedTerms) {
-            $scope.terms = $localStorage.savedTerms;
-        }
-        
-        // Initialize an array for each search topic
+        // initialize an array for each search topic
         $scope.languageArray = [];
         $scope.priceArray = [];
         $scope.regionArray = [];
         $scope.sparkArray = [];
+        
+        // restore any saved user inputs
+        $scope.restoreInputs = function() {
+            //console.log('restore inputs');
+            if ($localStorage.checkbox) {
+                $scope.checkbox = $localStorage.checkbox;
+            }
+            if ($localStorage.languageArray) {
+                $scope.languageArray = $localStorage.languageArray;
+            }
+            if ($localStorage.priceArray) {
+                $scope.priceArray = $localStorage.priceArray;
+            }
+            if ($localStorage.regionArray) {
+                $scope.regionArray = $localStorage.regionArray;
+            }
+            if ($localStorage.sparkArray) {
+                $scope.sparkArray = $localStorage.sparkArray;
+            }
+            //console.log('restored arrays:');
+            //console.log($scope.languageArray, $scope.priceArray, $scope.regionArray, $scope.sparkArray);
+        };
+        $scope.restoreInputs();
 
         // a checkboxChange function for each search topic
         // these functions edit the arrays based on user input
-        // use closure to generate specifics from general function?
+        // use closure to generate specific versions from general function?
         $scope.checkboxChange_Lang = function(value) {
             if ($scope.checkbox[value]) {
                 $scope.languageArray.push($scope.checkbox[value]);
@@ -55,8 +74,7 @@
             }
         }  
         
-        // use arrays to build mySearch object for querying
-        // use closure to generate specifics from general function?
+        // use the arrays to build mySearch object for querying
         $scope.buildMySearch = function() {
             $scope.mySearch = {};
             if ($scope.languageArray.length > 0) {
@@ -93,48 +111,60 @@
             });
         }
         
-        // when Submit button is pressed
+        // when Search button is pressed
         $scope.search = function() {
             $scope.results = [];
             $scope.showResults = false;
             $scope.showNoResults = false;
-//            if ($scope.terms !== undefined) {
-//                // save user's selections
-//                $localStorage.savedTerms = $scope.terms;
-//                
-                // build mySearch query
-                $scope.buildMySearch();
-            
-                // send mySearch query to database
-                $http.post('/search', $scope.mySearch)
-                     .then(
-                        function(response) {
-                            console.log('mySearch: ', $scope.mySearch);
-                            $scope.results = response.data;
-                            console.log('# results: ', $scope.results.length);
-                            console.log('results: ', $scope.results);
-                            if ($scope.results.length < 1) {
-                                $scope.showNoResults = true;
-                                console.log($scope.showNoResults);
-                            } else {
-                                $scope.processSearchResults();
-                                $scope.showResults = true;
-                            }
-                        }, function(error) {
-                            console.log(error);
+
+            // save user's selections
+            if ($scope.checkbox !== undefined) {
+                $localStorage.checkbox = $scope.checkbox;
+                $localStorage.languageArray = $scope.languageArray;
+                $localStorage.priceArray = $scope.priceArray;
+                $localStorage.regionArray = $scope.regionArray;
+                $localStorage.sparkArray = $scope.sparkArray;
+                //console.log('saved in localStorage: ');
+                //console.log($localStorage);
+            }    
+                
+            // build mySearch query
+            $scope.buildMySearch();
+
+            // send mySearch query to database & output results
+            $http.post('/search', $scope.mySearch)
+                 .then(
+                    function(response) {
+                        //console.log('mySearch: ', $scope.mySearch);
+                        $scope.results = response.data;
+                        //console.log('# results: ', $scope.results.length);
+                        if ($scope.results.length < 1) {
+                            $scope.showNoResults = true;
+                        } else {
+                            $scope.processSearchResults();
+                            $scope.showResults = true;
                         }
-                     )
-//            } else {
-//                console.log('search undefined');
-//            }
+                    }, function(error) {
+                        console.log(error);
+                    }
+                 );
         }
         
+        // when Clear All Selections button is pressed
         $scope.reset = function() {
-            $scope.terms = {}
             $scope.mySearch = {};
-            $localStorage.savedTerms = {};
             $scope.showResults = false;
             $scope.showNoResults = false;
+            $scope.checkbox = {};
+            $scope.languageArray = [];
+            $scope.priceArray = [];
+            $scope.regionArray = [];
+            $scope.sparkArray = [];
+            $localStorage.checkbox = {};
+            $localStorage.languageArray = [];
+            $localStorage.priceArray = [];
+            $localStorage.regionArray = [];
+            $localStorage.sparkArray = [];
         }
     }
 

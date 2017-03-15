@@ -1,0 +1,458 @@
+/*  Additional CSS:
+    Normalize.css
+    Bootstrap - breakpoints at xs/768-sm/992-md/1200-lg
+*/
+
+/*  Color Palette:
+    Orange: #EF7351
+    Purple: #55134E
+    White: white
+    Black: black
+*/
+
+/* General */
+
+
+body {
+    background-color: #55134E;
+}
+
+.navbar-default {
+    max-width: 1500px;
+    margin: auto;
+}
+.container-fluid {
+    padding: 0;
+    max-width: 1500px;
+}
+.row {
+  padding: 0;
+  margin: 0;
+}
+.navbar {
+    background-image: none;
+    background-color: #EF7351;
+    border-color: #55134E; 
+}
+.menu-button {
+    padding: 3px;
+    margin-right: 25px;
+    border: none;
+    height: 35px;
+    width: 35px;
+}
+.menu-icon {
+    font-size: 25px;
+    padding: 0;
+    margin: 0;
+    color: #55134E;
+}
+#my-navbar a {
+    color: #55134E;
+    font-size: 1.5rem;
+/*    border: 1px solid #EF7351;*/
+    border-left: 1px solid #55134E;
+    border-bottom: 2px solid #EF7351;
+    padding: 2px 0px 2px 15px;
+    margin: 15px 15px 13px 0px;
+}
+#my-navbar li:first-child a {
+	border-left-color: #EF7351;
+}
+#my-navbar a:hover {
+/*    border: 1px solid #55134E;   */
+/*    border-bottom: 2px solid #55134E;*/
+    text-decoration: underline;
+}
+.navbar-brand {
+    color: #55134E !important;
+    font-size: 3.5rem;
+    padding-left: 20px;
+}
+
+h1 {
+    font-size: calc(3rem + 3vw);
+    padding-top: calc(50px + 2vw);
+    padding-bottom: 2vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    color: #55134E;
+    margin: 0px;
+}
+
+.footer {
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+.footer p {
+    margin-bottom: 0;
+}
+.footer-white {
+    color: white;
+}
+.footer-white a {
+    color: white;
+}
+.footer-black {
+    color: black;
+}
+.footer-black a {
+    color: black;
+}
+.italic {
+    font-style: italic;
+}
+.fancy-font {
+    font-family: 'Emilys Candy', cursive;
+}
+.orange-background {
+    background-color: #EF7351;
+}
+
+/*---------------------------------------------*/
+
+/* Landing Page */
+#landing-container {
+    max-width: 1500px;
+    margin: auto;
+}
+.headbar {
+    background-color: #EF7351;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    color: #55134E;
+    font-size: 50px;
+}
+.hero {
+    height: calc(100vh - 70px - 250px - 30px);
+    min-height: 300px;
+    background: url('/assets/photos/trip-planning.jpg') no-repeat right;
+    background-size: cover;
+    
+}
+.all-points {
+    background-color: #EF7351;
+    padding: 0 15px 0 15px;
+}
+.all-points {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    line-height: 130%;
+}
+.all-points h4 {
+    color: #55134E;
+}
+.all-points h2 a {
+    color: #55134E;
+}
+.point {
+    height: 250px;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .point {
+        height: 200px;
+    }
+}
+@media (min-width: 1200px) { /* large width */
+    .hero {
+        height: calc(100vh - 70px - 30px);
+        min-height: 600px;
+    }
+    .point {
+        height: calc((100vh - 70px - 30px) / 3);
+        min-height: 200px;
+    }
+}
+
+/*---------------------------------------------*/
+
+/* Search Page */
+#search-container {
+    max-width: 1500px;
+    margin: auto;
+    background-color: white;
+}
+#search-form {
+    max-width: 1000px;
+    margin: auto;
+}
+#search-form label {
+    color: #55134E;
+}
+#search-form h4 {
+    color: #EF7351;
+    text-decoration: underline;
+}
+.search-column {
+    padding-left: 5vw;
+}
+.radio-group
+.checkbox-group
+.dropdown-group {
+    display: block;
+}
+.search-buttons-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.search-button {
+    background-color: #EF7351;
+    border: none;
+    color: #55134E;
+    padding: 5px 10px 5px 10px;
+    margin: 10px;
+}
+.search-results {
+    text-align: center;
+}
+.search-item {
+    border: 5px solid #EF7351;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 20px;
+    height: 23rem;
+    width: 85vw;
+    max-width: 45rem;
+    display: inline-block;
+    text-align: left;
+    box-sizing: border-box;
+}
+.dest-info h3  {
+    color: #EF7351;
+}
+.dest-info p {
+    color: #55134E;
+}
+.dest-info span {
+    font-weight: bold;
+}
+.no-search-results {
+	text-align: center;
+    color: #EF7351;
+    padding: 20px 0 20px 0;
+    font-size: 2rem;
+}
+
+/*---------------------------------------------*/
+
+/* Inspiration Page */
+
+#inspiration-wrapper {
+    background-color: #EF7351;
+    max-width: 1500px;
+    margin: auto;
+}
+#inspiration-wrapper h3 {
+	text-align: center;
+    color: #55134E;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.instafeed-wrapper {
+    margin-bottom: 2vw;
+}
+.instafeed-header {
+    background-color: #55134E;
+    font-size: 3rem;
+    border-top: 1px solid #55134E;
+    border-bottom: 1px solid #55134E;
+    padding: 1vw;
+}
+.instafeed-header a {
+    color: #EF7351;
+}
+.instagram-logo {
+    height: 3rem;
+    padding-right: 1vw;
+    margin-top: -10px;
+}
+.instafeed {
+    padding-top: 1vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.instaphoto {
+    position: relative;
+}
+.photo-background {
+    top: 0;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+}
+.photo-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background-color: black;
+    /* opacity 0.75 when showing */
+    border-radius: 6px;
+    color: white;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* adjust for height discrepancy */
+    box-sizing: content-box;
+    padding-bottom: 2px;
+}
+.photo-text {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    opacity: 1;
+}
+.photo-text a {
+    color: #EF7351;
+}
+.no-show {
+    opacity: 0;
+}
+.show {
+    opacity: 0.75;
+}
+
+/*---------------------------------------------*/
+
+/* Resources Page */
+
+.resources-container {
+/*     short content can cause blank space on bottom */
+    background: url('/assets/photos/tunnel-beach.jpg') no-repeat center fixed;
+    background-size: cover;
+    background-clip: padding-box;
+    max-width: 1500px;
+    margin: auto;
+    min-height: 100vh;
+}
+
+#filterOptions {
+    position: relative;
+    padding: 0;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    max-width: 1200px;
+}
+.filter {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 10px;
+    margin-left: 5vw;
+    margin-bottom: 5vw;
+    overflow: hidden;
+    position: relative;
+    font-size: 1.5rem;
+    color: white;
+}
+.filter.active {
+    text-decoration: underline;
+    border: 2px solid #EF7351;
+}
+.filter:hover {
+    text-decoration: underline;
+}
+.filter:first-child {
+    margin-left: 0;
+}
+.resource-icon {
+    height: 8rem;
+    max-height: 122px;
+    position: absolute;
+    z-index: 2;
+    padding-bottom: 3rem;
+}
+
+#dataHolder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+}
+.item {
+    width: 40vw;
+    max-width: 600px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 0 4vw 4vw 4vw;
+    background-color: white;
+    opacity: .8;
+    overflow: hidden;
+}
+@media (max-width: 992px) {
+    #dataHolder {
+	   -webkit-box-pack: center;
+	       -ms-flex-pack: center;
+	           justify-content: center;
+    }
+    .item {
+        width: 85vw;
+    }
+}
+.item h3 {
+    border-left: 15px solid white;
+}
+.item h3 a {
+    color: #EF7351;
+    opacity: 1;
+}
+.item p {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #55134E;
+}
+.item a {
+    color: black;
+}

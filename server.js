@@ -9,5 +9,5 @@ var server = http.createServer(app);
 red.init(server, config);
 app.use('/admin', red.httpAdmin);
 app.use('/', red.httpNode);
-server.listen(3000);
+server.listen(process.env.PORT);
 red.start();

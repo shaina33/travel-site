@@ -55,7 +55,7 @@
         $scope.instafeed1.run();
         $scope.instafeed2.run();
         
-        // Mouse Hover (or Finger Tap) Interaction on Instafeed photos
+        // Mouse Hover or Click/Tap Interactions on Instafeed photos
         $(document).ready(function() {
             $(document).on('mouseover', ".photo-info", function(event) {
                 //console.log(event);
@@ -66,7 +66,17 @@
                 //console.log(event);
                 $(this).removeClass("show");
                 $(this).addClass("no-show");
-            })
+            });
+            $(document).on('click', ".photo-info", function(event) {
+                //console.log(event);
+                if ($(this).hasClass("no-show")) {
+                    $(this).removeClass("no-show");
+                    $(this).addClass("show");
+                } else {
+                    $(this).removeClass("show");
+                    $(this).addClass("no-show");
+                } 
+            });
         });
     }
 

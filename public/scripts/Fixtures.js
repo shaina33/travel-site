@@ -60,7 +60,7 @@
                 itemTitle: 'Hostelworld',
                 categories: 'cat-lodg',
                 webLink: 'http://www.hostelworld.com/?affiliate=PHG&ref_id=1011l3W8t8oe',
-                itemDescr: "Hostelworld is the best site for booking hostel accomodations."
+                itemDescr: "Hostelworld is the best site for booking hostel accomodations. It offers a great selection of hostels and a helpful search interface."
             },
             worldNomads = {
                 itemTitle: 'World Nomads Travel Insurance',

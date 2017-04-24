@@ -3,25 +3,31 @@
     <h1 class="fancy-font">Plan your trip</h1>
     
     <ul id="filterOptions" class="row">
-       <!-- category must be listed as 2nd class on filter -->
-        <li class="filter all active first" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/icons/books-white-filled-100px.png"/>
-            All</li>
+       <!-- category must be listed as 2nd class on each filter -->
+        <li class="filter cat-all active first" ng-click="filterClicked($event)">
+            <span class="fa filter-icon fa-fw fa-book"></span>
+            <span class="filter-label">All Topics</span>
+        </li>
         <li class="filter cat-activ" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/icons/map-white-filled-100px.png"/>
-            Activities</li>
+            <span class="fa filter-icon fa-fw fa-map-marker"></span>
+            <span class="filter-label">Activities</span>
+        </li>
         <li class="filter cat-trans" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/icons/airplane-white-filled-100px.png"/>
-            Transportation</li>
+            <span class="fa filter-icon fa-fw fa-plane"></span>
+            <span class="filter-label">Transportation</span>
+        </li>
         <li class="filter cat-lodg" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/icons/bed-white-filled-100px.png"/>
-            Lodging</li>
+            <span class="fa filter-icon fa-fw fa-home"></span>
+            <span class="filter-label">Lodging</span>
+        </li>
         <li class="filter cat-inv" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/icons/volunteer-white-filled-100px.png"/>
-            Get Involved</li>
+            <span class="fa filter-icon fa-fw fa-group"></span>
+            <span class="filter-label">Get Involved</span>
+        </li>
         <li class="filter cat-other" ng-click="filterClicked($event)">
-            <img class="resource-icon" src="/assets/icons/medical-white-filled-100px.png"/>
-            Other</li>
+            <span class="fa filter-icon fa-fw fa-medkit"></span>
+            <span class="filter-label">Other</span>
+        </li>
     </ul>
     <div id="dataHolder" class="row">
         <div ng-repeat="resource in resources|orderBy: 'itemTitle' " class="item {{resource.categories}}">
@@ -29,6 +35,6 @@
             <p>{{resource.itemDescr}}</p>
         </div>
     </div>
-    <ng-include src="'/templates/footer.html'" class="footer-white"></ng-include>
+    <ng-include src="'/templates/footer.html'"></ng-include>
 </div>
 

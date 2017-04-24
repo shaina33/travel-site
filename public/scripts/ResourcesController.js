@@ -8,7 +8,7 @@
             $('.filter').removeClass('active');
             $chosenFilter.addClass('active');
             // filter items
-            if (chosenClass == 'all') {
+            if (chosenClass == 'cat-all') {
                 $('#dataHolder').children('div.item').show();
             } else {
                 $('#dataHolder').children('div:not(.'+chosenClass+')').hide();

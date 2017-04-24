@@ -4,35 +4,74 @@
 */
 
 /*  Color Palette:
-    Orange: #EF7351
-    Purple: #55134E
-    White: white
+    Purple (Base): #55134E
+    Orange (Accents & Buttons): #EF7351
+    Off-white (Margins): #F7F7F7
+    White (Background & Contrast Text): white
     Black: black
 */
 
 /* General */
 
-
 body {
-    background-color: #55134E;
-}
-
-.navbar-default {
-    max-width: 1500px;
-    margin: auto;
+    background-color: #F7F7F7;
+    font-family: Lato, sans-serif;
 }
 .container-fluid {
     padding: 0;
-    max-width: 1500px;
+    max-width: 1200px;
 }
 .row {
   padding: 0;
   margin: 0;
 }
+h1 {
+    font-size: calc(3rem + 3vw);
+    padding-top: calc(50px + 2vw);
+    padding-bottom: 2vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    color: #55134E;
+    margin: 0px;
+}
+.button {
+    padding: 8px 15px 8px 15px;
+    background-color: #EF7351;
+    color: white;
+    border: 2px solid #EF7351;
+    border-radius: 15px;
+    font-size: 1.7rem;
+    display: inline-block;
+    width: 180px;
+}
+.button:hover {
+    background-color: white;
+    color: #EF7351;
+    text-decoration: none;
+}
+.italic {
+    font-style: italic;
+}
+.fancy-font {
+    font-family: 'Emilys Candy', cursive;
+}
+.orange-background {
+    background-color: #EF7351;
+}
+/*---------------------------------------------*/
+
+/* Navbar & Footer */
+
+.navbar-default {
+    max-width: 1200px;
+    margin: auto;
+}
 .navbar {
     background-image: none;
-    background-color: #EF7351;
+    background-color: #55134E;
     border-color: #55134E; 
+    height: 50px;
 }
 .menu-button {
     padding: 3px;
@@ -45,77 +84,59 @@ body {
     font-size: 25px;
     padding: 0;
     margin: 0;
-    color: #55134E;
+    color: white;
 }
 #my-navbar a {
-    color: #55134E;
+    color: white;
     font-size: 1.5rem;
-/*    border: 1px solid #EF7351;*/
-    border-left: 1px solid #55134E;
-    border-bottom: 2px solid #EF7351;
+    border-left: 1px solid white;
     padding: 2px 0px 2px 15px;
     margin: 15px 15px 13px 0px;
 }
 #my-navbar li:first-child a {
-	border-left-color: #EF7351;
+	border-left-color: #55134E;
 }
 #my-navbar a:hover {
-/*    border: 1px solid #55134E;   */
-/*    border-bottom: 2px solid #55134E;*/
     text-decoration: underline;
 }
 .navbar-brand {
-    color: #55134E !important;
+    color: white !important;
     font-size: 3.5rem;
     padding-left: 20px;
 }
-
-h1 {
-    font-size: calc(3rem + 3vw);
-    padding-top: calc(50px + 2vw);
-    padding-bottom: 2vw;
+.navbar-collapse {
+    background-color: #55134E;
+}
+.navbar-collapse li {
     padding-left: 10px;
-    padding-right: 10px;
-    text-align: center;
-    color: #55134E;
-    margin: 0px;
 }
 
 .footer {
     text-align: center;
     height: 30px;
     line-height: 30px;
+    background-color: #55134E;
+    color: white;
 }
-.footer p {
-    margin-bottom: 0;
+.footer-white .footer {
+    background-color: white;
+    color: black;
 }
-.footer-white {
+.footer a {
     color: white;
 }
 .footer-white a {
-    color: white;
-}
-.footer-black {
     color: black;
 }
-.footer-black a {
-    color: black;
-}
-.italic {
-    font-style: italic;
-}
-.fancy-font {
-    font-family: 'Emilys Candy', cursive;
-}
-.orange-background {
-    background-color: #EF7351;
+.footer p {
+    margin-bottom: 0;
 }
 
 /*---------------------------------------------*/
 
 /* Landing Page */
 #landing-container {
-    max-width: 1500px;
+    max-width: 1200px;
     margin: auto;
 }
 .headbar {
@@ -127,44 +148,59 @@ h1 {
     font-size: 50px;
 }
 .hero {
-    height: calc(100vh - 70px - 250px - 30px);
+    height: calc(100vh - 300px - 30px);
     min-height: 300px;
     background: url('/assets/photos/trip-planning.jpg') no-repeat right;
     background-size: cover;
     
 }
 .all-points {
-    background-color: #EF7351;
+    background-color: white;
     padding: 0 15px 0 15px;
-}
-.all-points {
-    color: white;
+    color: #55134E;
     font-family: 'Lato', sans-serif;
     line-height: 130%;
 }
-.all-points h4 {
-    color: #55134E;
-}
-.all-points h2 a {
-    color: #55134E;
+.all-points p {
+    color: black;
+    max-width: 250px;
+    margin: auto;
 }
 .point {
-    height: 250px;
+    min-height: 300px;
     text-align: center;
+    position: relative;
+}
+.landing-icon {
+    font-size: 3.5rem;
+    color: #55134E;
+    margin-top: 20px;
+}
+
+.landing-button {
+    margin: 15px auto 0 auto;
+}
+
+@media (max-width: 940px) and (min-width: 768px) {
+    .point h2 {
+        font-size: 2.5rem;
+    }
+    .point h4 {
+        font-size: 1.5rem;
+    }
 }
 @media (max-width: 768px) {
-    .point {
-        height: 200px;
+    .point h2 {
+        font-size: 3.5rem;
     }
-}
-@media (min-width: 1200px) { /* large width */
-    .hero {
-        height: calc(100vh - 70px - 30px);
-        min-height: 600px;
+    .point h4 {
+        font-size: 2rem;
     }
-    .point {
-        height: calc((100vh - 70px - 30px) / 3);
-        min-height: 200px;
+    .point p {
+        font-size: 1.5rem;
+    }
+    .landing-button {
+        margin-bottom: 40px;
     }
 }
 
@@ -172,9 +208,10 @@ h1 {
 
 /* Search Page */
 #search-container {
-    max-width: 1500px;
+    max-width: 1200px;
     margin: auto;
     background-color: white;
+    min-height: 100vh;
 }
 #search-form {
     max-width: 1000px;
@@ -196,19 +233,14 @@ h1 {
     display: block;
 }
 .search-buttons-row {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+        justify-content: center;
 }
 .search-button {
-    background-color: #EF7351;
-    border: none;
-    color: #55134E;
-    padding: 5px 10px 5px 10px;
-    margin: 10px;
+    margin: 15px;
+    line-height: 130%;
 }
 .search-results {
     text-align: center;
@@ -246,9 +278,12 @@ h1 {
 /* Inspiration Page */
 
 #inspiration-wrapper {
-    background-color: #EF7351;
-    max-width: 1500px;
+    max-width: 1200px;
     margin: auto;
+    background-color: white;
+}
+#inspiration-wrapper h1 {
+	color: #EF7351;
 }
 #inspiration-wrapper h3 {
 	text-align: center;
@@ -260,11 +295,9 @@ h1 {
     margin-bottom: 2vw;
 }
 .instafeed-header {
-    background-color: #55134E;
     font-size: 3rem;
-    border-top: 1px solid #55134E;
-    border-bottom: 1px solid #55134E;
-    padding: 1vw;
+    border-bottom: 3px solid #EF7351;
+    margin: 1vw;
 }
 .instafeed-header a {
     color: #EF7351;
@@ -278,18 +311,14 @@ h1 {
     padding-top: 1vw;
     margin-left: 1vw;
     margin-right: 1vw;
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+        align-items: center;
 }
 /*
 @media (max-width: 768px) {
@@ -307,13 +336,12 @@ h1 {
     top: 0;
     margin-right: 5px;
     margin-bottom: 15px;
-    border: 2px solid black;
+    border: 2px solid #55134E;
     border-radius: 10px;
     box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
 }
 .photo-info {
     /* width and height set to match image in Instafeed template */
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     position: absolute;
@@ -323,13 +351,10 @@ h1 {
     border-radius: 6px;
     color: white;
     text-align: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
     /* adjust for height discrepancy */
     box-sizing: content-box;
     padding-bottom: 2px;
@@ -353,8 +378,8 @@ h1 {
 .photo-text {
     position: relative;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
     opacity: 1;
 }
 .photo-text a {
@@ -373,94 +398,104 @@ h1 {
 
 .resources-container {
 /*     short content can cause blank space on bottom */
+/*
     background: url('/assets/photos/tunnel-beach.jpg') no-repeat center fixed;
     background-size: cover;
     background-clip: padding-box;
-    max-width: 1500px;
+*/
+    background-color: white;
+    max-width: 1200px;
     margin: auto;
     min-height: 100vh;
+    border-left: 2px solid #55134E;
+    border-right: 2px solid #55134E;
 }
 
 #filterOptions {
     position: relative;
     padding: 0;
-    margin: 0 auto;
-    display: -webkit-box;
+    margin: 0 auto 20px auto;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    max-width: 1200px;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    -ms-flex-pack: center;
+        justify-content: center;
+    max-width: 800px;
 }
 .filter {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    height: 10rem;
-    width: 10rem;
-    border-radius: 10px;
-    margin-left: 5vw;
-    margin-bottom: 5vw;
-    overflow: hidden;
+    -ms-flex-flow: column wrap;
+        flex-flow: column wrap;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    height: 95px;
+    width: 110px;
     position: relative;
     font-size: 1.5rem;
-    color: white;
+/*
+    border: 2px solid #F7F7F7;
+    border-radius: 10px;
+    overflow: hidden;
+*/
 }
 .filter.active {
-    text-decoration: underline;
-    border: 2px solid #EF7351;
+/*    border: 2px solid #EF7351;*/
+    font-weight: bold;
 }
 .filter:hover {
-    text-decoration: underline;
+/*    border: 2px solid #EF7351;*/
+    font-weight: bold;
 }
+/*
 .filter:first-child {
     margin-left: 0;
 }
-.resource-icon {
-    height: 8rem;
-    max-height: 122px;
-    position: absolute;
-    z-index: 2;
-    padding-bottom: 3rem;
+*/
+span.filter-icon {
+    display: block;
+    color: #EF7351;
+    font-size: calc(3rem + 2vh);
+    padding-bottom: 5px;
+}
+.filter-label {
+    color: #55134E;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 #dataHolder {
-    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    background: url('/assets/photos/tunnel-beach.jpg') no-repeat center fixed;
+    background-size: cover;
+    background-clip: padding-box;
+    min-height: 75vh;
+    padding-top: 4vw;
 }
 .item {
-    width: 40vw;
-    max-width: 600px;
+    min-width: 200px;
+    max-width: 500px;
     border: 1px solid black;
     border-radius: 10px;
-    margin: 0 4vw 4vw 4vw;
+    margin: 0 2vw 4vw 4vw;
     background-color: white;
     opacity: .8;
     overflow: hidden;
 }
-@media (max-width: 992px) {
+@media (max-width: 1154px) {
     #dataHolder {
-	   -webkit-box-pack: center;
-	       -ms-flex-pack: center;
-	           justify-content: center;
+	   -ms-flex-pack: center;
+	       justify-content: center;
     }
     .item {
         width: 85vw;
